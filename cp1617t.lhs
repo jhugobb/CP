@@ -354,8 +354,8 @@ Pretende-se, neste problema:
         DOT, que pode ser lido por aplicações como por exemplo \Graphviz, produzindo
         as respectivas imagens. Por exemplo, para o caso de árvores \BTree, se definirmos
 \begin{code}
-dotBTree :: Show a => BTree a -> IO ExitCode
-dotBTree = dotpict . bmap nothing (Just . show) . cBTree2Exp
+--dotBTree :: Show a => BTree a -> IO ExitCode
+--dotBTree = dotpict . bmap nothing (Just . show) . cBTree2Exp
 \end{code}
         executando |dotBTree t| para
 \begin{quote}\small
@@ -718,8 +718,17 @@ inv x = undefined
 \begin{code}
 wc_w_final :: [Char] -> Int
 wc_w_final = wrapper . worker
-wrapper = undefined
-worker = undefined
+
+wrapper = sum
+        where sum [] = 0
+              sum (x:xs) | (x/=' ' && x/='\n' && x/='\t') = 1 + sum xs
+                         | otherwise = sum xs
+
+worker = cataList (either nil words)
+        where       words (x,[]) = [x]
+                    words (x,a:l) | (x/=' ' && x/='\n' && x/='\t') && (a==' ' || a=='\n' || a=='\t')  = (x:a:l)
+                                  | (x==' ' || x=='\n' || x=='\t') = (x:a:l)
+                                  | otherwise = words(a,l)
 \end{code}
 
 \subsection*{Problema 3}
