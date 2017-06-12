@@ -777,6 +777,15 @@ eliminatoria (Leaf x) = return x
 eliminatoria (Fork (x,y)) = do { v <- eliminatoria x ; z <- eliminatoria y ; jogo(v,z) }
 \end{code}
 
+\par Quanto à primeira parte deste problema, fizemo-la, tal como pedido, com recurso ao monáde IO. Tendo em conta que a função \emph{getR},
+recebe uma lista com elementos de um determinado tipo, nos devolve um par com um elemento random dessa lista e com o resto da mesma sem esse
+elemento, então a nossa ideia foi chamar essa função até que chegasse ao fim da lista inicial, isto é, recursividade. Ficamos com o primeiro elemento de getR,
+e fazemos \emph{permuta t}, em que t é o segundo elemento do par devolvido por getR, e assim sucessivamente.
+
+\par Em relação à segunda parte do problema, elaboramo-la da mesma forma que elaborámos a primeira, com recursividade. Percorrendo todos os nodos de uma árvore,
+quando chegarmos às folhas de um Fork, chamamos a função jogo, fornecida no enunciado, tendo como argumentos as equipas que estão nessas folhas, devolvendo
+a probabilidade de cada equipa nesse jogo vencer. Realizando isto para toda a árvore, obtemos o resultado final esperado.
+
 %----------------- Fim do anexo cpm soluções propostas ------------------------%
 
 %----------------- Índice remissivo (exige makeindex) -------------------------%
