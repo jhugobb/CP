@@ -181,7 +181,7 @@ import LTree
 import St
 import Probability hiding (cond)
 import Data.List
-import Test.QuickCheck hiding ((><))
+--import Test.QuickCheck hiding ((><))
 import System.Random  hiding (split)
 import GHC.IO.Exception
 import System.IO.Unsafe
@@ -355,8 +355,8 @@ Pretende-se, neste problema:
         DOT, que pode ser lido por aplicações como por exemplo \Graphviz, produzindo
         as respectivas imagens. Por exemplo, para o caso de árvores \BTree, se definirmos
 \begin{code}
-dotBTree :: Show a => BTree a -> IO ExitCode
-dotBTree = dotpict . bmap nothing (Just . show) . cBTree2Exp
+--dotBTree :: Show a => BTree a -> IO ExitCode
+--dotBTree = dotpict . bmap Nothing (Just . show) . cBTree2Exp
 \end{code}
         executando |dotBTree t| para
 \begin{quote}\small
@@ -856,6 +856,7 @@ prop_invfokk :: Double -> Property
 prop_invfokk num = (num > 1 && num < 2) ==> abs(a-b) <= 0.000000000000009
                         where a = inv num 500000
                               b = 1/num
+
 \end{code}
 
 \subsection*{Problema 2}
@@ -989,6 +990,7 @@ evolveB 0 = NB
 evolveB (n+1) = (B (genAlgae n))
 \fi
 
+
 \par generateAlgae:
 \begin{code}
 showAlgae = cataA ga gb
@@ -1028,12 +1030,25 @@ prop_4_6 n = (n >= 0 && n<24) ==> lshG n == fibsucc n
 \subsection*{Problema 5}
 
 \begin{code}
-permuta = undefined
+permuta [] = return []
+permuta l = do { (h,t) <- getR l ; x <- permuta t ; return (h:x) }
 
-eliminatoria = undefined
+
+eliminatoria (Leaf x) = return x
+eliminatoria (Fork (x,y)) = do { v <- eliminatoria x ; z <- eliminatoria y ; jogo(v,z) }
 \end{code}
 
-%----------------- Fim do anexo com soluções propostas ------------------------%
+
+\par Quanto à primeira parte deste problema, fizemo-la, tal como pedido, com recurso ao monáde IO. Tendo em conta que a função \emph{getR},
+recebe uma lista com elementos de um determinado tipo, nos devolve um par com um elemento random dessa lista e com o resto da mesma sem esse
+elemento, então a nossa ideia foi chamar essa função até que chegasse ao fim da lista inicial, isto é, recursividade. Ficamos com o primeiro elemento de getR,
+e fazemos \emph{permuta t}, em que t é o segundo elemento do par devolvido por getR, e assim sucessivamente.
+
+\par Em relação à segunda parte do problema, elaboramo-la da mesma forma que elaborámos a primeira, com recursividade. Percorrendo todos os nodos de uma árvore,
+quando chegarmos às folhas de um Fork, chamamos a função jogo, fornecida no enunciado, tendo como argumentos as equipas que estão nessas folhas, devolvendo
+a probabilidade de cada equipa nesse jogo vencer. Realizando isto para toda a árvore, obtemos o resultado final esperado.
+
+%----------------- Fim do anexo cpm soluções propostas ------------------------%
 
 %----------------- Índice remissivo (exige makeindex) -------------------------%
 
