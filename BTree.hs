@@ -90,7 +90,7 @@ qSort (h:t) = let (t1,t2) = part (<h) t
 or, using list comprehensions:
 
 qSort [] = []
-qSort (h:t) = qSort [ a | a <- t , a < h ] ++ [h] ++ 
+qSort (h:t) = qSort [ a | a <- t , a < h ] ++ [h] ++
               qSort [ a | a <- t , a >= h ]
 
 --}
@@ -102,7 +102,7 @@ traces = cataBTree (either (const [[]]) tunion)
 
 -- where
 
-tunion(a,(l,r)) = union (map (a:) l) (map (a:) r) 
+tunion(a,(l,r)) = union (map (a:) l) (map (a:) r)
 
 -- (4.6) Towers of Hanoi -------------------------------------------------------
 
@@ -121,7 +121,7 @@ strategy(d,n+1) = Right ((n,d),((not d,n),(not d,n)))
 
 {--
     The Towers of Hanoi problem comes from a puzzle marketed in 1883
-    by the French mathematician Édouard Lucas, under the pseudonym
+    by the French mathematician Ã‰douard Lucas, under the pseudonym
     Claus. The puzzle is based on a legend according to which
     there is a temple, apparently in Bramah rather than in Hanoi as
     one might expect, where there are three giant poles fixed in the
@@ -134,8 +134,8 @@ strategy(d,n+1) = Right ((n,d),((not d,n),(not d,n)))
     all the disks from the first of the poles to the second and, on
     the day that they completed their task the world would come to
     an end!
-    
-    There is a well­known inductive solution to the problem given
+
+    There is a wellÂ­known inductive solution to the problem given
     by the pseudocode below. In this solution we make use of the fact
     that the given problem is symmetrical with respect to all three
     poles. Thus it is undesirable to name the individual poles. Instead
@@ -148,22 +148,22 @@ strategy(d,n+1) = Right ((n,d),((not d,n),(not d,n)))
     to the smallest rather than the largest disk has the advantage
     that the number of the disk that is moved on any day is independent
     of the total number of disks to be moved.) Directions are boolean
-    values, true representing a clockwise movement and false an anti­clockwise
+    values, true representing a clockwise movement and false an antiÂ­clockwise
     movement. The pair (k,d') means move the disk numbered k from
     its current position in the direction d'. The semicolon operator
     concatenates sequences together, [] denotes an empty sequence
     and [x] is a sequence with exactly one element x. Taking the pairs
     in order from left to right, the complete sequence H n d prescribes
-    how to move the n smallest disks one­by­one from one pole to the
+    how to move the n smallest disks oneÂ­byÂ­one from one pole to the
     next pole in the direction d following the rule of never placing
     a larger disk on top of a smaller disk.
-    
+
     H 0     d = [],
-    H (n+1) d = H n ¬d ; [ (n, d) ] ; H n ¬d.
-    
+    H (n+1) d = H n Â¬d ; [ (n, d) ] ; H n Â¬d.
+
     (excerpt from R. Backhouse, M. Fokkinga / Information Processing
     Letters 77 (2001) 71--76)
-    
+
 --}
 
 -- (5) Depth and balancing (using mutual recursion) --------------------------
@@ -184,7 +184,7 @@ tnat :: Monoid c => (a -> c) -> Either () (a,(c, c)) -> c
 tnat f = either (const mempty) (theta . (f >< theta))
          where theta = uncurry mappend
 
--- monoid reduction 
+-- monoid reduction
 
 monBTree f = cataBTree (tnat f)
 
@@ -208,4 +208,3 @@ plug ((Dr False a l):z) t = Node (a,(plug z t,l))
 plug ((Dr True  a r):z) t = Node (a,(r,plug z t))
 
 ---------------------------- end of library ----------------------------------
-

@@ -62,15 +62,15 @@
 
 \title{
        	    Cálculo de Programas
-\\
+
        	Trabalho Prático
-\\
+
        	MiEI+LCC --- Ano Lectivo de 2016/17
 }
 
 \author{
        	\dium
-\\
+
        	Universidade do Minho
 }
 
@@ -86,12 +86,12 @@
 \begin{center}\large
 \begin{tabular}{ll}
 \textbf{Grupo} nr. & 99 (preencher)
-\\\hline
-a11111 & Nome1 (preencher)
-\\
-a22222 & Nome2 (preencher)
-\\
-a33333 & Nome3 (preencher)
+\hline
+a78582 & Hugo Brandão
+
+a78296 & Sérgio Alves
+
+a78218 & Tiago Alves
 \end{tabular}
 \end{center}
 
@@ -171,6 +171,7 @@ disciplina, entre outras, deve-se ao facto de, neste mesmo sítio do texto
 fonte, se ter inserido o seguinte código \Haskell:
 
 \begin{code}
+{-# OPTIONS_GHC -XNPlusKPatterns #-}
 import Cp
 import List
 import Nat
@@ -190,7 +191,7 @@ import System.IO.Unsafe
 e verifique que assim é: todo o texto que se encontra dentro do ambiente
 \begin{quote}\small\tt
 \verb!\begin{code}!
-\\ ... \\
+ ...
 \verb!\end{code}!
 \end{quote}
 vai ser seleccionado pelo \GHCi\ para ser executado.
@@ -342,11 +343,11 @@ Pretende-se, neste problema:
 	cujo funcionamento se sugere a seguir:
 \begin{quote}
 |lsplitB_tree [] = Left ()|
-\\
+
 |lsplitB_tree [7] = Right ([],[(7,[])])|
-\\
+
 |lsplitB_tree [5,7,1,9] = Right ([1],[(5,[]),(7,[9])])|
-\\
+
 |lsplitB_tree [7,5,1,9] = Right ([1],[(5,[]),(7,[9])])|
 \end{quote}
 
@@ -354,8 +355,8 @@ Pretende-se, neste problema:
         DOT, que pode ser lido por aplicações como por exemplo \Graphviz, produzindo
         as respectivas imagens. Por exemplo, para o caso de árvores \BTree, se definirmos
 \begin{code}
---dotBTree :: Show a => BTree a -> IO ExitCode
---dotBTree = dotpict . bmap Nothing (Just . show) . cBTree2Exp
+dotBTree :: Show a => BTree a -> IO ExitCode
+dotBTree = dotpict . bmap nothing (Just . show) . cBTree2Exp
 \end{code}
         executando |dotBTree t| para
 \begin{quote}\small
@@ -386,11 +387,11 @@ por Lindenmayer\footnote{Ver \url{https://en.wikipedia.org/wiki/Aristid_Lindenma
 no sistema:
 \begin{quote}
 \textbf{Variáveis:} |A| e |B|
-\\
+
 \textbf{Constantes:} nenhuma
-\\
+
 \textbf{Axioma:} |A|
-\\
+
 \textbf{Regras:} |A -> A B, B -> A|.
 \end{quote}
 Quer dizer, em cada iteração do ``crescimento" da alga, cada |A| deriva num par |A B| e
@@ -476,7 +477,7 @@ não há lugar a empates.} Por exemplo, |f("Arouca","Braga")| poderá dar como
 resultado a distribuição
 \[
 \begin{array}{ll}
-Arouca & \rule{05.72mm}{3pt}\ 28.6\%\\
+Arouca & \rule{05.72mm}{3pt}\ 28.6\%
 Braga  & \rule{14.20mm}{3pt}\ 71.4\%
 \end{array}
 \]
@@ -506,22 +507,22 @@ a probabilidade de cada equipa vir a ganhar a competição vem dada na distribui
 seguinte:
 \[
 \begin{array}{ll}
-|Porto| & \rule{36.89mm}{3pt}\ 21.7\%\\
-|Sporting| & \rule{36.379999999999995mm}{3pt}\ 21.4\%\\
-|Benfica| & \rule{32.3mm}{3pt}\ 19.0\%\\
-|Guimaraes| & \rule{15.98mm}{3pt}\ 9.4\%\\
-|Braga| & \rule{8.67mm}{3pt}\ 5.1\%\\
-|Nacional| & \rule{8.33mm}{3pt}\ 4.9\%\\
-|Maritimo| & \rule{6.969999999999999mm}{3pt}\ 4.1\%\\
-|Belenenses| & \rule{5.95mm}{3pt}\ 3.5\%\\
-|Rio Ave| & \rule{3.9099999999999997mm}{3pt}\ 2.3\%\\
-|Moreirense| & \rule{3.23mm}{3pt}\ 1.9\%\\
-|P.Ferreira| & \rule{2.38mm}{3pt}\ 1.4\%\\
-|Arouca| & \rule{2.38mm}{3pt}\ 1.4\%\\
-|Estoril| & \rule{2.38mm}{3pt}\ 1.4\%\\
-|Setubal| & \rule{2.38mm}{3pt}\ 1.4\%\\
-|Feirense| & \rule{1.19mm}{3pt}\ 0.7\%\\
-|Chaves| & \rule{0.68mm}{3pt}\ 0.4\%\\
+|Porto| & \rule{36.89mm}{3pt}\ 21.7\%
+|Sporting| & \rule{36.379999999999995mm}{3pt}\ 21.4\%
+|Benfica| & \rule{32.3mm}{3pt}\ 19.0\%
+|Guimaraes| & \rule{15.98mm}{3pt}\ 9.4\%
+|Braga| & \rule{8.67mm}{3pt}\ 5.1\%
+|Nacional| & \rule{8.33mm}{3pt}\ 4.9\%
+|Maritimo| & \rule{6.969999999999999mm}{3pt}\ 4.1\%
+|Belenenses| & \rule{5.95mm}{3pt}\ 3.5\%
+|Rio Ave| & \rule{3.9099999999999997mm}{3pt}\ 2.3\%
+|Moreirense| & \rule{3.23mm}{3pt}\ 1.9\%
+|P.Ferreira| & \rule{2.38mm}{3pt}\ 1.4\%
+|Arouca| & \rule{2.38mm}{3pt}\ 1.4\%
+|Estoril| & \rule{2.38mm}{3pt}\ 1.4\%
+|Setubal| & \rule{2.38mm}{3pt}\ 1.4\%
+|Feirense| & \rule{1.19mm}{3pt}\ 0.7\%
+|Chaves| & \rule{0.68mm}{3pt}\ 0.4\%
 \end{array}
 \]
 
@@ -600,11 +601,11 @@ de |d| somam |100%|.
 Por exemplo, a seguinte distribuição de classificações por escalões de $A$ a $E$,
 \[
 \begin{array}{ll}
-A & \rule{2mm}{3pt}\ 2\%\\
-B & \rule{12mm}{3pt}\ 12\%\\
-C & \rule{29mm}{3pt}\ 29\%\\
-D & \rule{35mm}{3pt}\ 35\%\\
-E & \rule{22mm}{3pt}\ 22\%\\
+A & \rule{2mm}{3pt}\ 2\%
+B & \rule{12mm}{3pt}\ 12\%
+C & \rule{29mm}{3pt}\ 29\%
+D & \rule{35mm}{3pt}\ 35\%
+E & \rule{22mm}{3pt}\ 22\%
 \end{array}
 \]
 será representada pela distribuição
@@ -710,8 +711,151 @@ outras funções auxiliares que sejam necessárias.
 
 \subsection*{Problema 1}
 
+\par Neste problema a maior dificuldade foi descobrir como em pointfree conseguíamos aplicar a fórmula matemática de maclaurin dado um natural arbitrário.
+A primeira solução a que chegamos foi uma que se baseia numa equação matemática demasiado complicada para apresentar uma justificação, e por indicação do docente
+tentamos encontrar outra via.
+
 \begin{code}
-inv x = undefined
+inv1 x = for ((1+) . ((1-x)*)) 1
+\end{code}
+
+\par O ponto de partida foi então uma definição pointwise de inv:
+
+\begin{code}
+invpw x 0 = 1
+invpw x (n+1) = maclaurin n + invpw x n
+                where maclaurin 0 = 1
+                      maclaurin (n+1) = (1-x) * maclaurin n
+\end{code}
+
+\par A partir de aí, com o auxílio da Lei de \emph{Fokkinga}, tentamos chegar ao catamorfismo de \emph{inv x}:
+
+\begin{eqnarray*}
+%
+    |f.in = h.F(split f g) e g.in = k.F(split f g)|
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\start
+\just={in=(either (const 0) succ); f = inv; g = maclaurin; F(split f g) = F(split inv maclaurin)=(id + (split inv maclaurin))}
+%
+    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))|
+    |maclaurin.(either (const 0) succ) = k.(id + (split inv maclaurin))|
+%
+\end{eqnarray*}
+
+\par Deduzimos então as funções h e k de inv e de maclaurin para preencher a lei de \emph{Fokkinga}:
+
+\begin{eqnarray*}
+\start
+%
+    |inv2v x (const 0) = 1|
+    |inv2v x succ = add.(split maclaurin >< inv2v x)|
+%
+\just={Universal-+}
+%
+    |inv2v x (either (const 0) succ) = either (const 1) (add.(split (maclaurin x) (inv2v x)))|
+%
+\just={Natural-id; Definição de maclaurin x}
+%
+    |inv2v x (either (const 0) succ) = either ((const 1).id) (add.(split (((1-x)*) maclaurin x n) (inv2v x)))|
+%
+\just={Absorção-x}
+%
+    |inv2v x (either (const 0) succ) = either ((const 1).id) (add.(((1-x)*) >< id).(split (maclaurin x) (inv2v x)))|
+%
+\just={Absorção-+}
+%
+    |inv2v x (either (const 0) succ) = (either (const 1) (add.( ((1-x)*) >< id)) ).(id + (split (maclaurin x) (inv2v x)))|
+%
+\end{eqnarray*}
+
+\par Logo,
+\begin{eqnarray*}
+%
+  |h = (either (const 1) (add.(((1-x)*) >< id)))|
+%
+\end{eqnarray*}
+
+\par Obtendo então h, passamos à dedução de k:
+%
+\begin{eqnarray*}
+\start
+%
+    |maclaurin x (const 0) = 1|
+    |maclaurin x succ = (1-x)*(maclaurin x)|
+%
+\just={Universal-+}
+%
+    |maclaurin x (either (const 0) succ) = either (const 1) ((1-x)*(maclaurin x))|
+%
+\just={Natural-id; Cancelamento-x}
+%
+    |inv2v x (either (const 0) succ) = either ((const 1).id) (((1-x)*).p1.(split (maclaurin x) (inv2v x)))|
+%
+\just={Absorção-+}
+%
+    |inv2v x (either (const 0) succ) = (either (const 1) (((1-x)*).p1 )).(id + (split (maclaurin x) (inv2v x)))|
+%
+\end{eqnarray*}
+
+\par Assim,
+
+\begin{eqnarray*}
+%
+  |k = (either (const 1) (((1-x)*).p1))|
+%
+\end{eqnarray*}
+
+\par Então, pela Lei de \emph{Fokkinga}, temos que:
+
+\begin{eqnarray*}
+%
+    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))|
+    |maclaurin.(either (const 0) succ) = k.(id + (split inv maclaurin))|
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\just={Fokkinga}
+%
+   |split inv maclaurin = cata(split h k)|
+%
+\end{eqnarray*}
+
+Com k encontrado e h definido acima, o catamorfismo de \emph{inv x} apresenta-se:
+
+\begin{code}
+invc x = p2.cataNat (split (either (const (1)) (((1-x)*).p1)) (either (const (1)) (add.(((1-x)*)><id))))
+\end{code}
+
+\par Finalmente, a última tarefa consistia em provar que \emph{inv x} seria um ciclo-\emph{for}:
+\begin{eqnarray*}
+\start
+         |split h k|
+%
+\just={Definição de h e k}
+%
+        |split (either (const 1) (((1-x)*) >< id)) (either (const 1) (((1-x)*).p1))|
+%
+\just={Lei da Troca}
+%
+        |either (split (const 1) (const 1)) (split (((1-x)*) >< id) (((1-x)*).p1))|
+%
+\end{eqnarray*}
+
+Finalmente, obtemos a solução, em que \emph{add} foi substituido por \emph{uncurry (+)} por erros de tipos:
+
+\begin{code}
+inv x = p2.(for (split (((1-x)*).p1) ((uncurry(+)).(((1-x)*)><id))) (1,1))
+\end{code}
+
+Nota: Teste \emph{QuickCheck}:
+ %------------------QUICKCHECK-------------------
+\begin{code}
+prop_invfokk :: Double -> Property
+prop_invfokk num = (num > 1 && num < 2) ==> abs(a-b) <= 0.000000000000009
+                        where a = inv num 500000
+                              b = 1/num
 \end{code}
 
 \subsection*{Problema 2}
@@ -730,44 +874,155 @@ inB_tree = either (const Nil) (uncurry Block)
 
 outB_tree :: B_tree a -> Either () (B_tree a, [(a, B_tree a)])
 outB_tree (Nil) = Left ()
-outB_tree (Block leftmost block) = Right (leftmost, block)
+outB_tree (Block{leftmost = l, block= b}) = Right (l,b)
 
 recB_tree f = baseB_tree id f
+
 baseB_tree g f = id -|- (f  >< (map (g >< f)))
+
 cataB_tree g =  g . (recB_tree (cataB_tree g)) . outB_tree
+
 anaB_tree g = inB_tree . (recB_tree (anaB_tree g)) . g
+
 hyloB_tree f g = cataB_tree f . anaB_tree g
 
 instance Functor B_tree
-         where fmap f = undefined
+         where fmap f = cataB_tree ( inB_tree . baseB_tree f id )
 
-inordB_tree = undefined
+\end{code}
 
-largestBlock = undefined
+\par Para as funções mais complexas apresentamos o diagrama correspondente que nos ajudou a resolver os problemas propostos.
+\par
+\par inordB\_tree:
 
-mirrorB_tree = undefined
+\begin{code}
+inordB_tree = cataB_tree inord
+    where inord = (either nil (conc . (id >< aux)))
+          aux = cataList (either nil (conc . ((singl . p1) >< id)))
+\end{code}
 
-lsplitB_tree = undefined
+\xymatrix@@C=3cm{
+    |B_Tree A|
+           \ar[d]_-{|cataB_tree inord|}
+&
+    |1 + (B_Tree A >< (A >< B_treeA)*)|
+           \ar[d]^{|id +((cataB_tree inord) >< (map(id >< cataB_tree inord)))|}
+           \ar[l]_-{|inB_tree|}
+\\
+     |A*|
+&
+     |1 + A* >< (A >< A* )*|
+           \ar[l]^-{|inord|}
+}
 
-qSortB_tree = undefined
+\par largestBlock:
 
-dotB_tree = undefined
+\begin{code}
+largestBlock :: B_tree a -> Int
+largestBlock = cataB_tree lb
+                where lb = (either (const 0) (uncurry max . (split (length . p2) (uncurry max . (id >< (maximum . aux))))))
+                      aux =  cataList (either nil (cons . (p2 >< id)))
+\end{code}
 
-cB_tree2Exp = undefined
+\xymatrix@@C=3cm{
+    |B_Tree A|
+           \ar[d]_-{|cataB_tree lb|}
+&
+    |1 + (B_Tree A >< (A >< B_treeA)*)|
+           \ar[d]^{|id +((cataB_tree lb) >< (map(id >< cataB_tree lb)))|}
+           \ar[l]_-{|inB_tree|}
+\\
+     |A*|
+&
+     |1 + A* >< (A >< A* )*|
+           \ar[l]^-{|lb|}
+}
+
+\par mirrorB\_tree
+
+\begin{code}
+mirrorB_tree = anaB_tree ((id -|- (join . inside . auxb2)) . outB_tree)
+    where auxb2 = id >< unzip
+          inside = split (reverse . p1 . p2) (reverse . cons . (split (p1) (p2 . p2)))
+          join = split (head . p2) ((uncurry zip) . (split (p1) (tail . p2)))
+\end{code}
+
+\begin{code}
+lsplitB_tree [] = Left ()
+lsplitB_tree (h:t) = Right (s, [(h, l)]) where (s,l) = partB_tree (<h) t
+
+partB_tree:: (a -> Bool) -> [a] -> ([a],[a])
+partB_tree p []                = ([],[])
+partB_tree p (h:t) | p h       = let (s,l) = partB_tree p t in (h:s,l)
+                   | otherwise = let (s,l) = partB_tree p t in (s,h:l)
+
+qSortB_tree :: Ord a => [a] -> [a]
+qSortB_tree = hyloB_tree (either nil inord) lsplitB_tree
+                where inord = conc . (id >< (concat . (map cons)))
+
+dotB_tree :: (Show a) => B_tree a -> IO ExitCode
+dotB_tree = dotpict . bmap nothing (Just . init . concat . (map (++"|")) . (map show)) . cB_tree2Exp
+
+cB_tree2Exp = cataB_tree (either (const (Var "nil")) (aux))
+                where aux = uncurry (Term) . (id ><cons) . (split (p1.p2) (split (p1) (p2.p2))) . (id >< unzip)
+
 \end{code}
 
 \subsection*{Problema 4}
 
 \begin{code}
-anaA = undefined
+anaA ga gb = inA . (id -|- (anaA ga gb)  >< (anaB ga gb)) . ga
 
-anaB = undefined
+anaB ga gb = inB . (id -|- (anaA ga gb)) . gb
 \end{code}
 
 \begin{code}
-generateAlgae = undefined
+generateAlgae = anaA ((id -|- split id id). outNat) (outNat)
+\end{code}
 
-showAlgae = undefined
+\iffalse
+Em Pointwise:
+genAlgae 0 = NA
+genAlgae (n+1) = (A (genAlgae n) (evolveB n))
+
+evolveB 0 = NB
+evolveB (n+1) = (B (genAlgae n))
+\fi
+
+\par generateAlgae:
+\begin{code}
+showAlgae = cataA ga gb
+                where ga = either (const "A") (conc)
+                      gb = either (const "B") (id)
+
+\end{code}
+\iffalse
+
+Ou então:
+showAlgae2 = cataA (either (showA) (conc . (id >< id))) (either (showB) id)
+            where showA = (filter (/='\'')) . show . (const 'A')
+                  showB = (filter (/='\'')) . show . (const 'B')
+\fi
+
+\xymatrix@@C=3cm{
+    |Algae|
+           \ar[d]_-{|cataB_tree lb|}
+&
+    |1 + A >< B|
+           \ar[d]^{|const "A" + ga >< gb|}
+           \ar[l]_-{|inA|}
+\\
+     |String|
+&
+     |1 + String >< String|
+           \ar[l]^-{|gagb|}
+}
+
+\begin{code}
+prop_4_6 :: Integer -> Property
+prop_4_6 n = (n >= 0 && n<24) ==> lshG n == fibsucc n
+                where lshG = toInteger . length . showAlgae . generateAlgae . fromInteger
+                      fibsucc = fib . succ
 \end{code}
 
 \subsection*{Problema 5}
@@ -778,7 +1033,7 @@ permuta = undefined
 eliminatoria = undefined
 \end{code}
 
-%----------------- Fim do anexo cpm soluções propostas ------------------------%
+%----------------- Fim do anexo com soluções propostas ------------------------%
 
 %----------------- Índice remissivo (exige makeindex) -------------------------%
 
