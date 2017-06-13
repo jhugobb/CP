@@ -1174,13 +1174,15 @@ tentamos encontrar outra via.
 \begin{eqnarray*}
 %
     \ensuremath{\Varid{f}\comp \mathbf{in}\mathrel{=}\Varid{h}\comp \Conid{F}\;\conj{\Varid{f}}{\Varid{g}}\;\Varid{e}\;\Varid{g}\comp \mathbf{in}\mathrel{=}\Varid{k}\comp \Conid{F}\;\conj{\Varid{f}}{\Varid{g}}}
+%
 \end{eqnarray*}
 
 \begin{eqnarray*}
 \start
+%
 \just={in=(either (const 0) succ); f = inv; g = maclaurin; F(split f g) = F(split inv maclaurin)=(id + (split inv maclaurin))}
 %
-    \ensuremath{\Varid{inv}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{h}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})}
+    \ensuremath{\Varid{inv}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{h}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})} \\
     \ensuremath{\Varid{maclaurin}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{k}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})}
 %
 \end{eqnarray*}
@@ -1188,10 +1190,11 @@ tentamos encontrar outra via.
 \par Deduzimos então as funções h e k de inv e de maclaurin para preencher a lei de \emph{Fokkinga}:
 
 \begin{eqnarray*}
-\start
 %
-    \ensuremath{\Varid{inv2v}\;\Varid{x}\;\underline{\mathrm{0}}\mathrel{=}\mathrm{1}}
-    \ensuremath{\Varid{inv2v}\;\Varid{x}\;\succ \mathrel{=}\Varid{add}\comp (\conj{\Varid{maclaurin}}{\cdot }\times\Varid{inv2v}\;\Varid{x})}
+\start
+
+    \ensuremath{\Varid{inv2v}\;\Varid{x}\;\underline{\mathrm{0}}\mathrel{=}\mathrm{1}} \\
+    \ensuremath{\Varid{inv2v}\;\Varid{x}\;\succ \mathrel{=}\Varid{add}\comp \conj{\Varid{maclaurin}\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}
 %
 \just={Universal-+}
 %
@@ -1221,9 +1224,10 @@ tentamos encontrar outra via.
 \par Obtendo então h, passamos à dedução de k:
 %
 \begin{eqnarray*}
-\start
 %
-    \ensuremath{\Varid{maclaurin}\;\Varid{x}\;\underline{\mathrm{0}}\mathrel{=}\mathrm{1}}
+\start
+
+    \ensuremath{\Varid{maclaurin}\;\Varid{x}\;\underline{\mathrm{0}}\mathrel{=}\mathrm{1}} \\
     \ensuremath{\Varid{maclaurin}\;\Varid{x}\;\succ \mathrel{=}(\mathrm{1}\mathbin{-}\Varid{x})\mathbin{*}(\Varid{maclaurin}\;\Varid{x})}
 %
 \just={Universal-+}
@@ -1252,7 +1256,7 @@ tentamos encontrar outra via.
 
 \begin{eqnarray*}
 %
-    \ensuremath{\Varid{inv}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{h}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})}
+    \ensuremath{\Varid{inv}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{h}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})} \\
     \ensuremath{\Varid{maclaurin}\comp \alt{\underline{\mathrm{0}}}{\succ }\mathrel{=}\Varid{k}\comp (\Varid{id}\mathbin{+}\conj{\Varid{inv}}{\Varid{maclaurin}})}
 \end{eqnarray*}
 
@@ -1346,7 +1350,7 @@ Nota: Teste \emph{QuickCheck}:
 %
 \just={ Definição de in }
 %
-        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]}
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}}{\Varid{sep}\comp \p1}}
 %
 \end{eqnarray*}
 
@@ -1357,7 +1361,7 @@ Nota: Teste \emph{QuickCheck}:
 %
 \just={Lei 1- Natural-id}
 %
-        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}}\comp \Varid{id},\Varid{sep}\comp \Varid{id}\comp \p1\mskip1.5mu]}
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}\comp \Varid{id}}{\Varid{sep}\comp \Varid{id}\comp \p1}}
 %
 \end{eqnarray*}
 
@@ -1366,25 +1370,98 @@ Nota: Teste \emph{QuickCheck}:
 \begin{eqnarray*}
 \start
 %
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}\comp \Varid{id}}{\Varid{sep}\comp \Varid{id}\comp \p1}}
+%
 \just={Lei 12- Natural-p1}
 %
-        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}}\comp \Varid{id},\Varid{sep}\comp \p1\comp (\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>})\mskip1.5mu]}
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}\comp \Varid{id}}{\Varid{sep}\comp \p1\comp (\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}})}}
 %
 \just={Lei 22- Absorcao - +}
 %
-        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]\comp (\Varid{id}\mathbin{-}}- (id >< <lookahead_sep, wc_w>))\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{50}\mathbin{-}\Conid{Fokkinga}\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0), x].(id + (id >< <lookahead_sep, wc_w>))\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{par}\;\Conid{Temos}\;\Varid{de}\;\Varid{determinar}\;\Varid{o}\;\Varid{x}\lambda \Varid{par}\;\Conid{Aqui}\;\Varid{segue}\;\Varid{um}\;\Varid{esquema}\;\Varid{para}\;\Varid{a}\;\Varid{melhor}\;\Varid{compreensão}\;\Varid{da}\;\Varid{wc\char95 w}\mathbin{:}\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}}wc_w nil = 0\ensuremath{}wc_w cons (c,l) = let x = (c,(lookahead_sep l, wc_w l))\ensuremath{}in    then p2.p2.x + 1\ensuremath{}else p2.p2.x\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{par}\;\Conid{Tornamos}\;\Varid{o}\;\Varid{c}\;\Varid{assim}\;\Varid{apra}\;\Varid{mais}\;\Varid{tarde}\;\Varid{conseguirmos}\;\Varid{torná}\mathbin{-}\Varid{lo}\;\Varid{em}\;(\Varid{id}\;\Varid{x}\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>})\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{32}\mathbin{-}\mathrm{2}\;\Varid{ª}\;\Conid{Lei}\;\Varid{da}\;\Varid{fusao}\;\mathbf{do}\;\Varid{condicional}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0\ensuremath{}wc_w cons (c,l) = ((not.sep.p1 && p1.p2) -> succ.p2.p2, p2.p2).(c,(lookahead_sep l, wc_w l))\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{73}\mathbin{-}\Conid{Igualdade}\;\Varid{extensional}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0\ensuremath{}wc_w cons = (((&&).<not.sep.p1,p1.p2>) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{10}\mathbin{-}\Conid{Igualdade}\;\Varid{extensional};\Conid{Lei}\;\mathrm{1}\mathbin{-}\Conid{Natural}\mathbin{-}\Varid{id}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0.id\ensuremath{}wc_w cons = (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Definiçao}\;\Varid{de}\;\mathbf{in}\;\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0).id,(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)]\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{2}\mathbin{-}\Conid{Absorçao}\mathbin{-+}\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -\ensuremath{\mathbin{-}(\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>}))}
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}}{\Varid{sep}\comp \p1}\comp (\Varid{id}\mathbin{+}(\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}}))}
 %
-\just={Ja temos ambas prontas para a regra de Fokkinga}
-%
-        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]\comp (\Varid{id}\mathbin{-}}- (id >< <lookahead_sep, wc_w>))\ensuremath{}wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -\ensuremath{\mathbin{-}(\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>}))}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\start
 %
 \just={Lei 50 - Fokkinga}
 %
-        \ensuremath{\Varid{cataList}\;(\mathbin{<}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu],[\mskip1.5mu \underline{\mathrm{0}},(((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\to \succ \comp \p2\comp \p2,\p2\comp \p2)\mskip1.5mu]\mathbin{>})}
+        \ensuremath{\Varid{wc\char95 w}\comp \mathbf{in}\mathrel{=}\alt{\underline{\mathrm{0}}}{\Varid{x}}\comp (\Varid{id}\mathbin{+}(\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}}))}
 %
+\end{eqnarray*}
+
+\par Temos de determinar o x
+
+\par Aqui segue um esquema para a melhor compreensão da wc_w:
+
+\begin{eqnarray*}
+\start
+
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{nil}\mathrel{=}\mathrm{0}} \\
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{cons}\;(\Varid{c},\Varid{l})\mathrel{=}\mathbf{let}\;\Varid{x}\mathrel{=}(\Varid{c},(\Varid{lookahead\char95 sep}\;\Varid{l},\Varid{wc\char95 w}\;\Varid{l}))} \\
+                           \ensuremath{\mathbf{in}\;\mathbf{if}\;(\neg \comp \Varid{sep}\;\Varid{c}\mathrel{\wedge}\Varid{lookahead\char95 sep}\;\Varid{l})\;\mathbf{then}\;\p2\comp \p2\comp \Varid{x}\mathbin{+}\mathrm{1}} \\
+                                \ensuremath{\mathbf{else}\;\p2\comp \p2\comp \Varid{x}}
+%
+\end{eqnarray*}
+
+\par Tornamos o c assim para mais tarde conseguirmos torná-lo em (id x (split lookahead_sep wc_w))
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 32 - 2 Lei da fusao do condicional}
+
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{nil}\mathrel{=}\mathrm{0}} \\
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{cons}\;(\Varid{c},\Varid{l})\mathrel{=}} \\
+        \ensuremath{(\Varid{cond}\;(\neg \comp \Varid{sep}\comp \p1\mathrel{\wedge}\p1\comp \p2)\;(\succ \comp \p2\comp \p2,\p2\comp \p2))\comp (\Varid{c},(\Varid{lookahead\char95 sep}\;\Varid{l},\Varid{wc\char95 w}\;\Varid{l}))}
+%
+\\
+\\
+\just={Lei 73 - Igualdade extensional}
+%
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{nil}\mathrel{=}\mathrm{0}} \\
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{cons}\mathrel{=}(\Varid{cond}\;((\mathrel{\wedge})\comp \conj{\neg \comp \Varid{sep}\comp \p1}{\p1\comp \p2})\;(\succ \comp \p2\comp \p2,\p2\comp \p2))\comp (\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}})}
+%
+\\
+\\
+\just={Lei 10 - Igualdade extensional; Lei 1 - Natural-id}
+%
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{nil}\mathrel{=}\mathrm{0}\comp \Varid{id}} \\
+        \ensuremath{\Varid{wc\char95 w}\;\Varid{cons}\mathrel{=}} \\
+        \ensuremath{(\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2))\comp (\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}})}
+%
+\\
+\\
+\just={Definiçao de in}
+%
+        \ensuremath{\Varid{wc\char95 w}\comp \mathbf{in}\mathrel{=}\alt{\underline{\mathrm{0}}\comp \Varid{id}}{(\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2))\comp (\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}})}}
+%
+\\
+\\
+\just={Lei 2 - Absorçao-+}
+%
+        \ensuremath{\Varid{wc\char95 w}\comp \mathbf{in}\mathrel{=}\alt{\underline{\mathrm{0}}}{\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2)}\comp (\Varid{id}\mathbin{+}(\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}}))}
+%
+\\
+\\
+\just={Ja temos ambas prontas para a regra de Fokkinga}
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}\alt{\underline{\Conid{True}}}{\Varid{sep}\comp \p1}\comp (\Varid{id}\mathbin{+}(\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>}))} \\
+        \ensuremath{\Varid{wc\char95 w}\comp \mathbf{in}\mathrel{=}} \\
+        \ensuremath{\alt{\underline{\mathrm{0}}}{\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2)}\comp (\Varid{id}\mathbin{+}(\Varid{id}\times\conj{\Varid{lookahead\char95 sep}}{\Varid{wc\char95 w}}))}
+%
+\\
+\\
+\just={Lei 50 - Fokkinga}
+%
+        \ensuremath{\Varid{cataList}\;\conj{\alt{\underline{\Conid{True}}}{\Varid{sep}}\comp \p1}{\alt{\underline{\mathrm{0}}}{\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2)}}}
+%
+\\
+\\
 \just={Lei 28 - Lei da troca}
 %
-        \ensuremath{\Varid{cataList}\;([\mskip1.5mu \mathbin{<}\underline{\Conid{True}},\underline{\mathrm{0}}\mathbin{>},\mathbin{<}\Varid{sep}\comp \p1,(((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\to \succ \comp \p2\comp \p2,\p2\comp \p2)\mathbin{>}\mskip1.5mu])}
+        \ensuremath{\Varid{cataList}\;\alt{\conj{\underline{\Conid{True}}}{\underline{\mathrm{0}}}}{\conj{\Varid{sep}\comp \p1}{\Varid{cond}\;((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\;(\succ \comp \p2\comp \p2,\p2\comp \p2)}}}
 %
 \end{eqnarray*}
 

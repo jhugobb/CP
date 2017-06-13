@@ -734,13 +734,15 @@ invpw x (n+1) = maclaurin n + invpw x n
 \begin{eqnarray*}
 %
     |f.in = h.F(split f g) e g.in = k.F(split f g)|
+%
 \end{eqnarray*}
 
 \begin{eqnarray*}
 \start
+%
 \just={in=(either (const 0) succ); f = inv; g = maclaurin; F(split f g) = F(split inv maclaurin)=(id + (split inv maclaurin))}
 %
-    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))|
+    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))| \\
     |maclaurin.(either (const 0) succ) = k.(id + (split inv maclaurin))|
 %
 \end{eqnarray*}
@@ -748,10 +750,11 @@ invpw x (n+1) = maclaurin n + invpw x n
 \par Deduzimos então as funções h e k de inv e de maclaurin para preencher a lei de \emph{Fokkinga}:
 
 \begin{eqnarray*}
-\start
 %
-    |inv2v x (const 0) = 1|
-    |inv2v x succ = add.(split maclaurin >< inv2v x)|
+\start
+
+    |inv2v x (const 0) = 1| \\
+    |inv2v x succ = add.(split (maclaurin x) (inv2v x))|
 %
 \just={Universal-+}
 %
@@ -781,9 +784,10 @@ invpw x (n+1) = maclaurin n + invpw x n
 \par Obtendo então h, passamos à dedução de k:
 %
 \begin{eqnarray*}
-\start
 %
-    |maclaurin x (const 0) = 1|
+\start
+
+    |maclaurin x (const 0) = 1| \\
     |maclaurin x succ = (1-x)*(maclaurin x)|
 %
 \just={Universal-+}
@@ -812,7 +816,7 @@ invpw x (n+1) = maclaurin n + invpw x n
 
 \begin{eqnarray*}
 %
-    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))|
+    |inv.(either (const 0) succ) = h.(id + (split inv maclaurin))| \\
     |maclaurin.(either (const 0) succ) = k.(id + (split inv maclaurin))|
 \end{eqnarray*}
 
@@ -886,7 +890,7 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 %
 \just={ Definição de in }
 %
-        |look.in = [(const True), sep.p1]|
+        |look.in = either (const True) (sep.p1) |
 %
 \end{eqnarray*}
 
@@ -897,7 +901,7 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 %
 \just={Lei 1- Natural-id}
 %
-        |look.in = [(const True).id, sep.id.p1]|
+        |look.in = either ((const True).id) (sep.id.p1)|
 %
 \end{eqnarray*}
 
@@ -906,13 +910,15 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 \begin{eqnarray*}
 \start
 %
+        |look.in = either ((const True).id) (sep.id.p1) |
+%
 \just={Lei 12- Natural-p1}
 %
-        |look.in = [(const True).id, sep.p1.(id >< <lookahead_sep, wc_w>)]|
+        |look.in = (either ((const True).id) (sep.p1.(id >< (split lookahead_sep wc_w))))|
 %
 \just={Lei 22- Absorcao - +}
 %
-        |look.in = [(const True), sep.p1].(id -|- (id >< <lookahead_sep, wc_w>))|
+        |look.in = (either (const True) (sep.p1)) . (id + (id >< (split lookahead_sep wc_w)))|
 %
 \end{eqnarray*}
 
@@ -921,7 +927,7 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 %
 \just={Lei 50 - Fokkinga}
 %
-        |wc_w.in = [(const 0), x].(id + (id >< <lookahead_sep, wc_w>))|
+        |wc_w.in = (either (const 0) x) . (id + (id >< (split lookahead_sep wc_w)))|
 %
 \end{eqnarray*}
 
@@ -931,53 +937,71 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 
 \begin{eqnarray*}
 \start
-        |wc_w nil = 0|
-        |wc_w cons (c,l) = let x = (c,(lookahead_sep l, wc_w l))|
-                          |in    then p2.p2.x + 1|
+
+        |wc_w nil = 0| \\
+        |wc_w cons (c,l) = let x = (c,(lookahead_sep l, wc_w l))| \\
+                           |in  if (not.sep c && lookahead_sep l) then p2.p2.x + 1| \\
                                 |else p2.p2.x|
 %
 \end{eqnarray*}
 
-\par Tornamos o c assim apra mais tarde conseguirmos torná-lo em (id x <lookahead_sep, wc_w>)
+\par Tornamos o c assim para mais tarde conseguirmos torná-lo em (id x (split lookahead_sep wc_w))
 
 \begin{eqnarray*}
 \start
 %
-\just={Lei 32 - 2ª Lei da fusao do condicional}
+\just={Lei 32 - 2 Lei da fusao do condicional}
+
+        |wc_w nil = 0| \\
+        |wc_w cons (c,l) =| \\
+        |(cond (not.sep.p1 && p1.p2) (succ.p2.p2, p2.p2)) . (c,(lookahead_sep l, wc_w l))|
 %
-        |wc_w nil = 0|
-        |wc_w cons (c,l) = ((not.sep.p1 && p1.p2) -> succ.p2.p2, p2.p2).(c,(lookahead_sep l, wc_w l))|
-%
+\\
+\\
 \just={Lei 73 - Igualdade extensional}
 %
-        |wc_w nil = 0|
-        |wc_w cons = (((&&).<not.sep.p1,p1.p2>) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)|
+        |wc_w nil = 0| \\
+        |wc_w cons = (cond ((&&).(split (not.sep.p1) (p1.p2))) (succ.p2.p2, p2.p2)) . (id >< (split lookahead_sep wc_w))|
 %
+\\
+\\
 \just={Lei 10 - Igualdade extensional; Lei 1 - Natural-id}
 %
-        |wc_w nil = 0.id|
-        |wc_w cons = (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)|
+        |wc_w nil = 0.id| \\
+        |wc_w cons = | \\
+        |(cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2)) . (id >< (split lookahead_sep wc_w))|
 %
+\\
+\\
 \just={Definiçao de in}
 %
-        |wc_w.in = [(const 0).id,(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)]|
+        |wc_w.in = either ((const 0).id) ((cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2)) . (id >< (split lookahead_sep wc_w)))|
 %
+\\
+\\
 \just={Lei 2 - Absorçao-+}
 %
-        |wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -|- (id >< <lookahead_sep, wc_w>))|
+        |wc_w.in = (either (const 0) (cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2))) . (id + (id >< (split lookahead_sep wc_w)))|
 %
+\\
+\\
 \just={Ja temos ambas prontas para a regra de Fokkinga}
 %
-        |look.in = [(const True), sep.p1].(id -|- (id >< <lookahead_sep, wc_w>))|
-        |wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -|- (id >< <lookahead_sep, wc_w>))|
+        |look.in = (either (const True) (sep.p1)) . (id + (id >< <lookahead_sep, wc_w>))| \\
+        |wc_w.in = | \\
+        |(either (const 0) (cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2))) . (id + (id >< (split lookahead_sep wc_w)))|
 %
+\\
+\\
 \just={Lei 50 - Fokkinga}
 %
-        |cataList (<[(const True), sep.p1],[(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)]>)|
+        |cataList (split (either (const True) sep.p1) (either (const 0) (cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2))))|
 %
+\\
+\\
 \just={Lei 28 - Lei da troca}
 %
-        |cataList ([<(const True), (const 0)>, <sep.p1, (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)>])|
+        |cataList (either (split (const True) (const 0)) (split (sep.p1) (cond ((&&).(not.sep >< p1)) (succ.p2.p2, p2.p2))))|
 %
 \end{eqnarray*}
 
