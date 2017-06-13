@@ -61,16 +61,16 @@
 %---------------------------------------------------------------------------
 
 \title{
-       	    Cálculo de Programas
-
+       	Cálculo de Programas
+\\
        	Trabalho Prático
-
+\\
        	MiEI+LCC --- Ano Lectivo de 2016/17
 }
 
 \author{
        	\dium
-
+\\
        	Universidade do Minho
 }
 
@@ -86,11 +86,12 @@
 \begin{center}\large
 \begin{tabular}{ll}
 \textbf{Grupo} nr. & 99 (preencher)
+\\
 \hline
 a78582 & Hugo Brandão
-
+\\
 a78296 & Sérgio Alves
-
+\\
 a78218 & Tiago Alves
 \end{tabular}
 \end{center}
@@ -181,7 +182,7 @@ import LTree
 import St
 import Probability hiding (cond)
 import Data.List
---import Test.QuickCheck hiding ((><))
+import Test.QuickCheck hiding ((><))
 import System.Random  hiding (split)
 import GHC.IO.Exception
 import System.IO.Unsafe
@@ -863,8 +864,132 @@ prop_invfokk num = (num > 1 && num < 2) ==> abs(a-b) <= 0.000000000000009
 \begin{code}
 wc_w_final :: [Char] -> Int
 wc_w_final = wrapper . worker
-wrapper = undefined
-worker = undefined
+
+wrapper = p2
+
+worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond ((uncurry(&&)).((not.sep) >< p1)) (succ.p2.p2) (p2.p2))))
+        where sep c = (c == ' ' || c=='\n' || c== '\t')
+
+\end{code}
+
+\par Os cálculos do problema 2 são os seguintes:
+
+\begin{eqnarray*}
+\start
+        |lookahead_sep []    = True
+        lookahead_sep (c:l) = sep c|
+%
+\just={Aplicar o [nil,cons] e Lei 73}
+%
+        |lookahead_sep nil    = True|
+        |lookahead_sep cons (c,l) = sep (c,l)|
+%
+\just={ Definição de in }
+%
+        |look.in = [(const True), sep.p1]|
+%
+\end{eqnarray*}
+
+\par id entre sep e p1 para podermos usar a lei 12
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 1- Natural-id}
+%
+        |look.in = [(const True).id, sep.id.p1]|
+%
+\end{eqnarray*}
+
+\par Como podemos colocar uma função g, utilizamos um split para termos já o Funtor definido para usarmos Fokkinga
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 12- Natural-p1}
+%
+        |look.in = [(const True).id, sep.p1.(id >< <lookahead_sep, wc_w>)]|
+%
+\just={Lei 22- Absorcao - +}
+%
+        |look.in = [(const True), sep.p1].(id -|- (id >< <lookahead_sep, wc_w>))|
+%
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 50 - Fokkinga}
+%
+        |wc_w.in = [(const 0), x].(id + (id >< <lookahead_sep, wc_w>))|
+%
+\end{eqnarray*}
+
+\par Temos de determinar o x
+
+\par Aqui segue um esquema para a melhor compreensão da wc_w:
+
+\begin{eqnarray*}
+\start
+        |wc_w nil = 0|
+        |wc_w cons (c,l) = let x = (c,(lookahead_sep l, wc_w l))|
+                          |in    then p2.p2.x + 1|
+                                |else p2.p2.x|
+%
+\end{eqnarray*}
+
+\par Tornamos o c assim apra mais tarde conseguirmos torná-lo em (id x <lookahead_sep, wc_w>)
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 32 - 2ª Lei da fusao do condicional}
+%
+        |wc_w nil = 0|
+        |wc_w cons (c,l) = ((not.sep.p1 && p1.p2) -> succ.p2.p2, p2.p2).(c,(lookahead_sep l, wc_w l))|
+%
+\just={Lei 73 - Igualdade extensional}
+%
+        |wc_w nil = 0|
+        |wc_w cons = (((&&).<not.sep.p1,p1.p2>) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)|
+%
+\just={Lei 10 - Igualdade extensional; Lei 1 - Natural-id}
+%
+        |wc_w nil = 0.id|
+        |wc_w cons = (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)|
+%
+\just={Definiçao de in}
+%
+        |wc_w.in = [(const 0).id,(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)]|
+%
+\just={Lei 2 - Absorçao-+}
+%
+        |wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -|- (id >< <lookahead_sep, wc_w>))|
+%
+\just={Ja temos ambas prontas para a regra de Fokkinga}
+%
+        |look.in = [(const True), sep.p1].(id -|- (id >< <lookahead_sep, wc_w>))|
+        |wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -|- (id >< <lookahead_sep, wc_w>))|
+%
+\just={Lei 50 - Fokkinga}
+%
+        |cataList (<[(const True), sep.p1],[(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)]>)|
+%
+\just={Lei 28 - Lei da troca}
+%
+        |cataList ([<(const True), (const 0)>, <sep.p1, (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)>])|
+%
+\end{eqnarray*}
+
+\begin{code}
+prop_wc_w_final :: String -> Property
+prop_wc_w_final str = forAll genSafeString $ \str -> (toInteger(wc_w str) == toInteger(wc_w_final str))
+
+genSafeChar :: Gen Char
+genSafeChar = elements (['a'..'z'] ++ [' ', '\t', '\n'])
+
+genSafeString :: Gen String
+genSafeString = listOf genSafeChar
 \end{code}
 
 \subsection*{Problema 3}

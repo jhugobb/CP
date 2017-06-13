@@ -272,16 +272,16 @@
 %---------------------------------------------------------------------------
 
 \title{
-       	    Cálculo de Programas
-
+       	Cálculo de Programas
+\\
        	Trabalho Prático
-
+\\
        	MiEI+LCC --- Ano Lectivo de 2016/17
 }
 
 \author{
        	\dium
-
+\\
        	Universidade do Minho
 }
 
@@ -297,11 +297,12 @@
 \begin{center}\large
 \begin{tabular}{ll}
 \textbf{Grupo} nr. & 99 (preencher)
+\\
 \hline
 a78582 & Hugo Brandão
-
+\\
 a78296 & Sérgio Alves
-
+\\
 a78218 & Tiago Alves
 \end{tabular}
 \end{center}
@@ -648,9 +649,9 @@ Pretende-se, neste problema:
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
-\>[B]{}\Varid{dotBTree}\mathbin{::}\Conid{Show}\;\Varid{a}\Rightarrow \fun{BTree} \;\Varid{a}\to \fun{IO}\;\Conid{ExitCode}{}\<[E]%
+\>[B]{}\mbox{\onelinecomment dotBTree :: Show a => BTree a -> IO ExitCode}{}\<[E]%
 \\
-\>[B]{}\Varid{dotBTree}\mathrel{=}\Varid{dotpict}\comp \Varid{bmap}\;\Varid{nothing}\;(\Conid{Just}\comp \Varid{show})\comp \Varid{cBTree2Exp}{}\<[E]%
+\>[B]{}\mbox{\onelinecomment dotBTree = dotpict . bmap Nothing (Just . show) . cBTree2Exp}{}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
         executando \ensuremath{\Varid{dotBTree}\;\Varid{t}} para
@@ -1317,14 +1318,90 @@ Nota: Teste \emph{QuickCheck}:
 \subsection*{Problema 2}
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{9}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{wc\char95 w\char95 final}\mathbin{::}[\mskip1.5mu \Conid{Char}\mskip1.5mu]\to \Conid{Int}{}\<[E]%
 \\
 \>[B]{}\Varid{wc\char95 w\char95 final}\mathrel{=}\Varid{wrapper}\comp \Varid{worker}{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{wrapper}\mathrel{=}\p2{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{worker}\mathrel{=}\Varid{cataList}\;\alt{\conj{\underline{\Conid{True}}}{\underline{\mathrm{0}}}}{\conj{\Varid{sep}\comp \p1}{\Varid{cond}\;(\uncurry{(\mathrel{\wedge})}\comp ((\neg \comp \Varid{sep})\times\p1))\;(\succ \comp \p2\comp \p2)\;(\p2\comp \p2)}}{}\<[E]%
 \\
-\>[B]{}\Varid{wrapper}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\hsindent{9}{}\<[9]%
+\>[9]{}\mathbf{where}\;\Varid{sep}\;\Varid{c}\mathrel{=}(\Varid{c}\equiv \text{\tt '~'}\mathrel{\vee}\Varid{c}\equiv \text{\tt '\char92 n'}\mathrel{\vee}\Varid{c}\equiv \text{\tt '\char92 t'}){}\<[E]%
+\ColumnHook
+\end{hscode}\resethooks
+
+\par Os cálculos do problema 2 são os seguintes:
+
+\begin{eqnarray*}
+\start
+        \ensuremath{\Varid{lookahead\char95 sep}\;[\mskip1.5mu \mskip1.5mu]\mathrel{=}\Conid{True}\;\Varid{lookahead\char95 sep}\;(\Varid{c}\mathbin{:}\Varid{l})\mathrel{=}\Varid{sep}\;\Varid{c}}
+%
+\just={Aplicar o [nil,cons] e Lei 73}
+%
+        \ensuremath{\Varid{lookahead\char95 sep}\;\Varid{nil}\mathrel{=}\Conid{True}}
+        \ensuremath{\Varid{lookahead\char95 sep}\;\Varid{cons}\;(\Varid{c},\Varid{l})\mathrel{=}\Varid{sep}\;(\Varid{c},\Varid{l})}
+%
+\just={ Definição de in }
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]}
+%
+\end{eqnarray*}
+
+\par id entre sep e p1 para podermos usar a lei 12
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 1- Natural-id}
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}}\comp \Varid{id},\Varid{sep}\comp \Varid{id}\comp \p1\mskip1.5mu]}
+%
+\end{eqnarray*}
+
+\par Como podemos colocar uma função g, utilizamos um split para termos já o Funtor definido para usarmos Fokkinga
+
+\begin{eqnarray*}
+\start
+%
+\just={Lei 12- Natural-p1}
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}}\comp \Varid{id},\Varid{sep}\comp \p1\comp (\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>})\mskip1.5mu]}
+%
+\just={Lei 22- Absorcao - +}
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]\comp (\Varid{id}\mathbin{-}}- (id >< <lookahead_sep, wc_w>))\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{50}\mathbin{-}\Conid{Fokkinga}\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0), x].(id + (id >< <lookahead_sep, wc_w>))\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{par}\;\Conid{Temos}\;\Varid{de}\;\Varid{determinar}\;\Varid{o}\;\Varid{x}\lambda \Varid{par}\;\Conid{Aqui}\;\Varid{segue}\;\Varid{um}\;\Varid{esquema}\;\Varid{para}\;\Varid{a}\;\Varid{melhor}\;\Varid{compreensão}\;\Varid{da}\;\Varid{wc\char95 w}\mathbin{:}\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}}wc_w nil = 0\ensuremath{}wc_w cons (c,l) = let x = (c,(lookahead_sep l, wc_w l))\ensuremath{}in    then p2.p2.x + 1\ensuremath{}else p2.p2.x\ensuremath{\mathbin{\%}\lambda \Varid{end}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{par}\;\Conid{Tornamos}\;\Varid{o}\;\Varid{c}\;\Varid{assim}\;\Varid{apra}\;\Varid{mais}\;\Varid{tarde}\;\Varid{conseguirmos}\;\Varid{torná}\mathbin{-}\Varid{lo}\;\Varid{em}\;(\Varid{id}\;\Varid{x}\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>})\lambda \Varid{begin}\;\{\mskip1.5mu \Varid{eqnarray}\mathbin{*}\mskip1.5mu\}\lambda \Varid{start}\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{32}\mathbin{-}\mathrm{2}\;\Varid{ª}\;\Conid{Lei}\;\Varid{da}\;\Varid{fusao}\;\mathbf{do}\;\Varid{condicional}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0\ensuremath{}wc_w cons (c,l) = ((not.sep.p1 && p1.p2) -> succ.p2.p2, p2.p2).(c,(lookahead_sep l, wc_w l))\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{73}\mathbin{-}\Conid{Igualdade}\;\Varid{extensional}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0\ensuremath{}wc_w cons = (((&&).<not.sep.p1,p1.p2>) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{10}\mathbin{-}\Conid{Igualdade}\;\Varid{extensional};\Conid{Lei}\;\mathrm{1}\mathbin{-}\Conid{Natural}\mathbin{-}\Varid{id}\mskip1.5mu\}\mathbin{\%}}wc_w nil = 0.id\ensuremath{}wc_w cons = (((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Definiçao}\;\Varid{de}\;\mathbf{in}\;\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0).id,(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2).(id >< <lookahead_sep, wc_w>)]\ensuremath{\mathbin{\%}\lambda \Varid{just}\mathrel{=}\{\mskip1.5mu \Conid{Lei}\;\mathrm{2}\mathbin{-}\Conid{Absorçao}\mathbin{-+}\mskip1.5mu\}\mathbin{\%}}wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -\ensuremath{\mathbin{-}(\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>}))}
+%
+\just={Ja temos ambas prontas para a regra de Fokkinga}
+%
+        \ensuremath{\Varid{look}\comp \mathbf{in}\mathrel{=}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu]\comp (\Varid{id}\mathbin{-}}- (id >< <lookahead_sep, wc_w>))\ensuremath{}wc_w.in = [(const 0),(((&&).(not.sep >< p1)) -> succ.p2.p2, p2.p2)](id -\ensuremath{\mathbin{-}(\Varid{id}\times\mathbin{<}\Varid{lookahead\char95 sep},\Varid{wc\char95 w}\mathbin{>}))}
+%
+\just={Lei 50 - Fokkinga}
+%
+        \ensuremath{\Varid{cataList}\;(\mathbin{<}[\mskip1.5mu \underline{\Conid{True}},\Varid{sep}\comp \p1\mskip1.5mu],[\mskip1.5mu \underline{\mathrm{0}},(((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\to \succ \comp \p2\comp \p2,\p2\comp \p2)\mskip1.5mu]\mathbin{>})}
+%
+\just={Lei 28 - Lei da troca}
+%
+        \ensuremath{\Varid{cataList}\;([\mskip1.5mu \mathbin{<}\underline{\Conid{True}},\underline{\mathrm{0}}\mathbin{>},\mathbin{<}\Varid{sep}\comp \p1,(((\mathrel{\wedge})\comp (\neg \comp \Varid{sep}\times\p1))\to \succ \comp \p2\comp \p2,\p2\comp \p2)\mathbin{>}\mskip1.5mu])}
+%
+\end{eqnarray*}
+
+\begin{hscode}\SaveRestoreHook
+\column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{E}{@{}>{\hspre}l<{\hspost}@{}}%
+\>[B]{}\Varid{prop\char95 wc\char95 w\char95 final}\mathbin{::}\Conid{String}\to \Conid{Property}{}\<[E]%
 \\
-\>[B]{}\Varid{worker}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{prop\char95 wc\char95 w\char95 final}\;\Varid{str}\mathrel{=}\Varid{forAll}\;\Varid{genSafeString}\mathbin{\$}\lambda \Varid{str}\to (\Varid{toInteger}\;(\Varid{wc\char95 w}\;\Varid{str})\equiv \Varid{toInteger}\;(\Varid{wc\char95 w\char95 final}\;\Varid{str})){}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{genSafeChar}\mathbin{::}\Conid{Gen}\;\Conid{Char}{}\<[E]%
+\\
+\>[B]{}\Varid{genSafeChar}\mathrel{=}\Varid{elements}\;([\mskip1.5mu \text{\tt 'a'}\mathinner{\ldotp\ldotp}\text{\tt 'z'}\mskip1.5mu]\plus [\mskip1.5mu \text{\tt '~'},\text{\tt '\char92 t'},\text{\tt '\char92 n'}\mskip1.5mu]){}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{genSafeString}\mathbin{::}\Conid{Gen}\;\Conid{String}{}\<[E]%
+\\
+\>[B]{}\Varid{genSafeString}\mathrel{=}\Varid{listOf}\;\Varid{genSafeChar}{}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
 
@@ -1521,6 +1598,7 @@ evolveB 0 = NB
 evolveB (n+1) = (B (genAlgae n))
 \fi
 
+
 \par generateAlgae:
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
@@ -1580,13 +1658,27 @@ showAlgae2 = cataA (either (showA) (conc . (id >< id))) (either (showB) id)
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
-\>[B]{}\Varid{permuta}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{permuta}\;[\mskip1.5mu \mskip1.5mu]\mathrel{=}\Varid{return}\;[\mskip1.5mu \mskip1.5mu]{}\<[E]%
+\\
+\>[B]{}\Varid{permuta}\;\Varid{l}\mathrel{=}\mathbf{do}\;\{\mskip1.5mu (\Varid{h},\Varid{t})\leftarrow \Varid{getR}\;\Varid{l};\Varid{x}\leftarrow \Varid{permuta}\;\Varid{t};\Varid{return}\;(\Varid{h}\mathbin{:}\Varid{x})\mskip1.5mu\}{}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{eliminatoria}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{eliminatoria}\;(\Conid{Leaf}\;\Varid{x})\mathrel{=}\Varid{return}\;\Varid{x}{}\<[E]%
+\\
+\>[B]{}\Varid{eliminatoria}\;(\Conid{Fork}\;(\Varid{x},\Varid{y}))\mathrel{=}\mathbf{do}\;\{\mskip1.5mu \Varid{v}\leftarrow \Varid{eliminatoria}\;\Varid{x};\Varid{z}\leftarrow \Varid{eliminatoria}\;\Varid{y};\Varid{jogo}\;(\Varid{v},\Varid{z})\mskip1.5mu\}{}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
 
-%----------------- Fim do anexo com soluções propostas ------------------------%
+
+\par Quanto à primeira parte deste problema, fizemo-la, tal como pedido, com recurso ao monáde IO. Tendo em conta que a função \emph{getR},
+recebe uma lista com elementos de um determinado tipo, nos devolve um par com um elemento random dessa lista e com o resto da mesma sem esse
+elemento, então a nossa ideia foi chamar essa função até que chegasse ao fim da lista inicial, isto é, recursividade. Ficamos com o primeiro elemento de getR,
+e fazemos \emph{permuta t}, em que t é o segundo elemento do par devolvido por getR, e assim sucessivamente.
+
+\par Em relação à segunda parte do problema, elaboramo-la da mesma forma que elaborámos a primeira, com recursividade. Percorrendo todos os nodos de uma árvore,
+quando chegarmos às folhas de um Fork, chamamos a função jogo, fornecida no enunciado, tendo como argumentos as equipas que estão nessas folhas, devolvendo
+a probabilidade de cada equipa nesse jogo vencer. Realizando isto para toda a árvore, obtemos o resultado final esperado.
+
+%----------------- Fim do anexo cpm soluções propostas ------------------------%
 
 %----------------- Índice remissivo (exige makeindex) -------------------------%
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.6.12)  12 JUN 2017 21:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.6.13)  13 JUN 2017 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,10 +580,10 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/polytable/polytable.sty
-Package: polytable 2013/07/18 v0.8.5 `polytable' package (Andres Loeh)
+(/usr/share/texmf/tex/latex/polytable/polytable.sty
+Package: polytable 2009/11/01 v0.8.4 `polytable' package (Andres Loeh)
 
-(/usr/share/texlive/texmf-dist/tex/latex/lazylist/lazylist.sty)
+(/usr/share/texmf/tex/latex/polytable/lazylist.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen154
@@ -614,76 +614,9 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count119
 \calc@Cskip=\skip49
 )
-Runaway argument?
-{ Cálculo de Programas 
-! Paragraph ended before \title was complete.
-<to be read again> 
-                   \par 
-l.276 
-      
-? r
-OK, entering \nonstopmode...
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.277        	T
-               rabalho Prático
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279        	M
-               iEI+LCC --- Ano Lectivo de 2016/17
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Too many }'s.
-l.280 }
-       
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-Runaway argument?
-{ \dium 
-! Paragraph ended before \author was complete.
-<to be read again> 
-                   \par 
-l.284 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285        	U
-               niversidade do Minho
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Too many }'s.
-l.286 }
-       
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
 \@indexfile=\write6
 \openout6 = `cp1617t.idx'.
+
 
 Writing index file cp1617t.idx
 (./cp1617t.aux)
@@ -813,119 +746,49 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 293.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 Package xypdf Info: Line width: 0.39998pt on input line 293.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-! LaTeX Error: No \title given.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.296 
-      
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: No \author given.
-
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 299.
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.300 \hline
-            
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! You can't use `\hrule' here except with leaders.
-\hline ->\noalign {\ifnum 0=`}\fi \hrule 
-                                         \@height \arrayrulewidth \futurelet...
-l.300 \hline
-            
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \futurelet 
-l.300 \hline
-            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \futurelet 
-l.300 \hline
-            
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.301 a78582 &
-               Hugo Brandão
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.305 a78218 &
-               Tiago Alves
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 309.
-(./cp1617t.toc
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 310.
+ (./cp1617t.toc
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 2.
 )
 \tf@toc=\write8
 \openout8 = `cp1617t.toc'.
 
- [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 342.
 
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 343.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 \openout5 = `cp1617t.ptb'.
 
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 417.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 418.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 417.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 418.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+? r
+OK, entering \nonstopmode...
 ! Extra }, or forgotten $.
 \mbox #1->\leavevmode \hbox {#1}
                                 
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -936,7 +799,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -947,7 +810,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -958,7 +821,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -966,7 +829,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \mbox #1->\leavevmode \hbox {#1}
                                 
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -977,7 +840,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -988,7 +851,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -999,7 +862,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1007,7 +870,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \mbox #1->\leavevmode \hbox {#1}
                                 
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1018,7 +881,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1029,7 +892,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.417 \end{hscode}
+l.418 \end{hscode}
                   \resethooks
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1037,24 +900,24 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[3] [4]
+[2] [3]
 \openout5 = `cp1617t.ptb'.
 
 \openout5 = `cp1617t.ptb'.
 
- <cp1617t_media/B-tree.jpg, id=104, 801.99625pt x 222.8325pt>
+ <cp1617t_media/B-tree.jpg, id=101, 801.99625pt x 222.8325pt>
 File: cp1617t_media/B-tree.jpg Graphic file (type jpg)
 
 <use cp1617t_media/B-tree.jpg>
-Package pdftex.def Info: cp1617t_media/B-tree.jpg used on input line 570.
+Package pdftex.def Info: cp1617t_media/B-tree.jpg used on input line 571.
 (pdftex.def)             Requested size: 227.62206pt x 63.2427pt.
- [5]
+ [4]
 \openout5 = `cp1617t.ptb'.
 
 \openout5 = `cp1617t.ptb'.
 
 
-Overfull \hbox (44.29572pt too wide) in paragraph at lines 658--659
+Overfull \hbox (44.29572pt too wide) in paragraph at lines 659--660
 []$\OT1/cmr/m/it/9 t [] [] \OT1/cmr/m/n/9 (6\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 ([
 ] (3\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 ([] (2\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 ([]
 \OML/cmm/m/it/9 ; []\OT1/cmr/m/n/9 ))\OML/cmm/m/it/9 ; []\OT1/cmr/m/n/9 ))\OML/
@@ -1063,22 +926,22 @@ cmm/m/it/9 ; [] \OT1/cmr/m/n/9 (7\OML/cmm/m/it/9 ; \OT1/cmr/m/n/9 ([]\OML/cmm/m
  ; []\OT1/cmr/m/n/9 ))))))$ 
  []
 
-<cp1617t_media/dot1.jpg, id=117, 394.47375pt x 330.23375pt>
+<cp1617t_media/dot1.jpg, id=114, 394.47375pt x 330.23375pt>
 File: cp1617t_media/dot1.jpg Graphic file (type jpg)
 
 <use cp1617t_media/dot1.jpg>
-Package pdftex.def Info: cp1617t_media/dot1.jpg used on input line 662.
+Package pdftex.def Info: cp1617t_media/dot1.jpg used on input line 663.
 (pdftex.def)             Requested size: 182.09486pt x 152.43845pt.
- [6 <./cp1617t_media/B-tree.jpg>]
-<cp1617t_media/dot2.jpg, id=135, 981.6675pt x 238.8925pt>
+ [5 <./cp1617t_media/B-tree.jpg>]
+<cp1617t_media/dot2.jpg, id=132, 981.6675pt x 238.8925pt>
 File: cp1617t_media/dot2.jpg Graphic file (type jpg)
 
 <use cp1617t_media/dot2.jpg>
-Package pdftex.def Info: cp1617t_media/dot2.jpg used on input line 667.
+Package pdftex.def Info: cp1617t_media/dot2.jpg used on input line 668.
 (pdftex.def)             Requested size: 409.71692pt x 99.70354pt.
 \openout5 = `cp1617t.ptb'.
 
- [7 <./cp1617t_media/dot1.jpg> <./cp1617t_media/dot2.jpg>]
+ [6 <./cp1617t_media/dot1.jpg> <./cp1617t_media/dot2.jpg>]
 \openout5 = `cp1617t.ptb'.
 
 \openout5 = `cp1617t.ptb'.
@@ -1095,23 +958,23 @@ Package pdftex.def Info: cp1617t_media/dot2.jpg used on input line 667.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.817 Braga  &
+l.818 Braga  &
                \rule{14.20mm}{3pt}\ 71.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[8] <cp1617t_media/sorteio.jpg, id=165, 1632.0975pt x 422.57875pt>
+[7] <cp1617t_media/sorteio.jpg, id=162, 1632.0975pt x 422.57875pt>
 File: cp1617t_media/sorteio.jpg Graphic file (type jpg)
 
 <use cp1617t_media/sorteio.jpg>
-Package pdftex.def Info: cp1617t_media/sorteio.jpg used on input line 829.
+Package pdftex.def Info: cp1617t_media/sorteio.jpg used on input line 830.
 (pdftex.def)             Requested size: 455.24411pt x 117.86987pt.
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.847 \ensuremath{\Conid{Sporting}} &
+l.848 \ensuremath{\Conid{Sporting}} &
                                       \rule{36.379999999999995mm}{3pt}\ 21.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1120,7 +983,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.849 \ensuremath{\Conid{Guimaraes}} &
+l.850 \ensuremath{\Conid{Guimaraes}} &
                                        \rule{15.98mm}{3pt}\ 9.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1129,7 +992,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.851 \ensuremath{\Conid{Nacional}} &
+l.852 \ensuremath{\Conid{Nacional}} &
                                       \rule{8.33mm}{3pt}\ 4.9\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1138,7 +1001,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.853 \ensuremath{\Conid{Belenenses}} &
+l.854 \ensuremath{\Conid{Belenenses}} &
                                         \rule{5.95mm}{3pt}\ 3.5\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1147,7 +1010,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.855 \ensuremath{\Conid{Moreirense}} &
+l.856 \ensuremath{\Conid{Moreirense}} &
                                         \rule{3.23mm}{3pt}\ 1.9\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1156,7 +1019,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.857 \ensuremath{\Conid{Arouca}} &
+l.858 \ensuremath{\Conid{Arouca}} &
                                     \rule{2.38mm}{3pt}\ 1.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1165,7 +1028,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.859 \ensuremath{\Conid{Setubal}} &
+l.860 \ensuremath{\Conid{Setubal}} &
                                      \rule{2.38mm}{3pt}\ 1.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1174,7 +1037,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.861 \ensuremath{\Conid{Chaves}} &
+l.862 \ensuremath{\Conid{Chaves}} &
                                     \rule{0.68mm}{3pt}\ 0.4\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1186,17 +1049,17 @@ So I'll assume that you meant to type \cr instead.
 
 \openout5 = `cp1617t.ptb'.
 
-[9 <./cp1617t_media/sorteio.jpg>]
+[8 <./cp1617t_media/sorteio.jpg>]
 \openout5 = `cp1617t.ptb'.
 
- (./cp1617t.bbl) [10]
+ (./cp1617t.bbl) [9]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 930.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 931.
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.952 B &
+l.953 B &
           \rule{12mm}{3pt}\ 12\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1205,7 +1068,7 @@ So I'll assume that you meant to type \cr instead.
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.954 D &
+l.955 D &
           \rule{35mm}{3pt}\ 35\%
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
@@ -1221,7 +1084,7 @@ So I'll assume that you meant to type \cr instead.
 
 \openout5 = `cp1617t.ptb'.
 
-[11]
+[10]
 \openout5 = `cp1617t.ptb'.
 
 \openout5 = `cp1617t.ptb'.
@@ -1229,26 +1092,16 @@ So I'll assume that you meant to type \cr instead.
 \openout5 = `cp1617t.ptb'.
 
 
-Overfull \hbox (1.64172pt too wide) in paragraph at lines 1134--1138
+Overfull \hbox (1.64172pt too wide) in paragraph at lines 1135--1139
 \OT1/ppl/m/n/10 Os alu-nos de-vem co-lo-car neste anexo as suas solu[][]oes aos
  exerc[]^^Pcios pro-pos-tos, de acordo com o ``layout''
  []
 
 \openout5 = `cp1617t.ptb'.
 
-[12]
+[11]
 \openout5 = `cp1617t.ptb'.
 
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.1182 ...}\conj{\Varid{inv}}{\Varid{maclaurin}})}
-                                                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
 
 ! Missing { inserted.
 <to be read again> 
@@ -1260,10 +1113,20 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1184 ...}\conj{\Varid{inv}}{\Varid{maclaurin}})}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1185 \end{eqnarray*}
+l.1186 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1272,21 +1135,21 @@ Try to go on, since this might almost work.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1185 \end{eqnarray*}
+l.1186 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
 
-Overfull \hbox (72.52202pt too wide) in alignment at lines 1178--1185
+Overfull \hbox (72.52202pt too wide) in alignment at lines 1179--1186
  [][][] []
  []
 
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1193 ...{\cdot }\times\Varid{inv2v}\;\Varid{x})}
+l.1194 ...{\cdot }\times\Varid{inv2v}\;\Varid{x})}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1296,7 +1159,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1195 \just={Universal-+}
+l.1196 \just={Universal-+}
                           
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1305,7 +1168,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1197 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
+l.1198 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1315,7 +1178,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1199 ...{Natural-id; Definição de maclaurin x}
+l.1200 ...{Natural-id; Definição de maclaurin x}
                                                   
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1324,7 +1187,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1201 ...\;\Varid{n}}{\Varid{inv2v}\;\Varid{x}}}}
+l.1202 ...\;\Varid{n}}{\Varid{inv2v}\;\Varid{x}}}}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1334,7 +1197,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1203 \just={Absorção-x}
+l.1204 \just={Absorção-x}
                            
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1343,7 +1206,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1205 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
+l.1206 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1353,7 +1216,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1207 \just={Absorção-+}
+l.1208 \just={Absorção-+}
                            
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1362,7 +1225,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1209 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}})}
+l.1210 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}})}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1372,7 +1235,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1211 \end{eqnarray*}
+l.1212 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1381,7 +1244,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1226 ...athbin{*}(\Varid{maclaurin}\;\Varid{x})}
+l.1227 ...athbin{*}(\Varid{maclaurin}\;\Varid{x})}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1391,7 +1254,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1228 \just={Universal-+}
+l.1229 \just={Universal-+}
                           
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1400,7 +1263,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1230 ...thbin{*}(\Varid{maclaurin}\;\Varid{x})}}
+l.1231 ...thbin{*}(\Varid{maclaurin}\;\Varid{x})}}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1410,7 +1273,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1232 \just={Natural-id; Cancelamento-x}
+l.1233 \just={Natural-id; Cancelamento-x}
                                          
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1419,7 +1282,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1234 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
+l.1235 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}}}}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1429,7 +1292,7 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1236 \just={Absorção-+}
+l.1237 \just={Absorção-+}
                            
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1438,7 +1301,7 @@ Try to go on, since this might almost work.
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
-l.1238 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}})}
+l.1239 ...\;\Varid{x}}{\Varid{inv2v}\;\Varid{x}})}
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -1448,21 +1311,11 @@ so that I will find a matching right brace soon.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1240 \end{eqnarray*}
+l.1241 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.1254 ...}\conj{\Varid{inv}}{\Varid{maclaurin}})}
-                                                  
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
 
 ! Missing { inserted.
 <to be read again> 
@@ -1474,10 +1327,20 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1256 ...}\conj{\Varid{inv}}{\Varid{maclaurin}})}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1256 \end{eqnarray*}
+l.1257 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
@@ -1486,26 +1349,179 @@ Try to go on, since this might almost work.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1256 \end{eqnarray*}
+l.1257 \end{eqnarray*}
                       
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
+
+[12]
+\openout5 = `cp1617t.ptb'.
+
+\openout5 = `cp1617t.ptb'.
+
+\openout5 = `cp1617t.ptb'.
+
+\openout5 = `cp1617t.ptb'.
+
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 1375.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.1375 ...in{*}\mskip1.5mu\}\lambda \Varid{start}}
+                                                  wc_w nil = 0\ensuremath{}w...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.1375 ...in{*}\mskip1.5mu\}\lambda \Varid{start}}
+                                                  wc_w nil = 0\ensuremath{}w...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 1375.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ...@spacefactor \spacefactor }\accent 
+                                                  #1 #2\egroup \spacefactor ...
+l.1375 ...d{condicional}\mskip1.5mu\}\mathbin{\%}}
+                                                  wc_w nil = 0\ensuremath{}w...
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+! You can't use `\spacefactor' in math mode.
+\add@accent ...}\accent #1 #2\egroup \spacefactor 
+                                                  \accent@spacefactor 
+l.1375 ...d{condicional}\mskip1.5mu\}\mathbin{\%}}
+                                                  wc_w nil = 0\ensuremath{}w...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Command \textordfeminine invalid in math mode on input line 1375
+.
+
+Missing character: There is no � in font cmex10!
+Missing character: There is no � in font cmex10!
+! Extra alignment tab has been changed to \cr.
+<template> \egroup \endtemplate 
+                                
+l.1375 ...emath{}wc_w cons (c,l) = ((not.sep.p1 &&
+                                                   p1.p2) -> succ.p2.p2, p2....
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<template> \egroup \endtemplate 
+                                
+l.1375 ...nil = 0.id\ensuremath{}wc_w cons = (((&&
+                                                  ).(not.sep >< p1)) -> succ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1375.
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 1375.
+
+! Extra alignment tab has been changed to \cr.
+<template> \egroup \endtemplate 
+                                
+l.1375 ...}\mathbin{\%}}wc_w.in = [(const 0),(((&&
+                                                  ).(not.sep >< p1)) -> succ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+! LaTeX Error: Too many columns in eqnarray environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1377 ... ambas prontas para a regra de Fokkinga}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra alignment tab has been changed to \cr.
+<template> \egroup \endtemplate 
+                                
+l.1379 ...)\ensuremath{}wc_w.in = [(const 0),(((&&
+                                                  ).(not.sep >< p1)) -> succ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+! LaTeX Error: Too many columns in eqnarray environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1381 \just={Lei 50 - Fokkinga}
+                                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (3188.41893pt too wide) in alignment at lines 1366--1389
+ [][][] []
+ []
 
 [13]
 \openout5 = `cp1617t.ptb'.
 
-\openout5 = `cp1617t.ptb'.
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
+
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
+
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
+
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
+
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
+
+
+Overfull \hbox (24.23544pt too wide) in paragraph at lines 1391--1406
+ [][] 
+ []
 
 \openout5 = `cp1617t.ptb'.
 
 \openout5 = `cp1617t.ptb'.
 
-\openout5 = `cp1617t.ptb'.
-
-\openout5 = `cp1617t.ptb'.
-
- [14] <xymatrix 2x2 191>
+<xymatrix 2x2 191> [14]
 \openout5 = `cp1617t.ptb'.
 
  <xymatrix 2x2 191>
@@ -1514,67 +1530,67 @@ Try to go on, since this might almost work.
 \openout5 = `cp1617t.ptb'.
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][][][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][][][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][][][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][][][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][] 
  []
 
 
-Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
+Overfull \hbox (6.85762pt too wide) in paragraph at lines 1533--1570
  [][][][] 
  []
 
@@ -1584,31 +1600,32 @@ Overfull \hbox (6.85762pt too wide) in paragraph at lines 1456--1493
 
 \openout5 = `cp1617t.ptb'.
 
-[15] <xymatrix 2x2 191>
+<xymatrix 2x2 191>
 \openout5 = `cp1617t.ptb'.
 
+ [15]
 \openout5 = `cp1617t.ptb'.
 
  (./cp1617t.ind [16] [17
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1615.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1615.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1707.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1707.
  (./cp1617t.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1615.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1707.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1707.
 
 Package rerunfilecheck Info: File `cp1617t.out' has not changed.
 (rerunfilecheck)             Checksum: 5DC94B7046BAC0227E6F46C9CCE6DE02;364.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1615.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1707.
  ) 
 Here is how much of TeX's memory you used:
- 10640 strings out of 493304
- 145582 string characters out of 6139871
- 299254 words of memory out of 5000000
- 13779 multiletter control sequences out of 15000+600000
- 39378 words of font info for 122 fonts, out of 8000000 for 9000
+ 10646 strings out of 493304
+ 145563 string characters out of 6139871
+ 302263 words of memory out of 5000000
+ 13784 multiletter control sequences out of 15000+600000
+ 41215 words of font info for 125 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  32i,16n,43p,3280b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1635,10 +1652,10 @@ hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/xypic/xybtip10.pfb>
-Output written on cp1617t.pdf (17 pages, 453150 bytes).
+Output written on cp1617t.pdf (17 pages, 457798 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 342 compressed objects within 4 object streams
+ 395 PDF objects out of 1000 (max. 8388607)
+ 343 compressed objects within 4 object streams
  63 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
