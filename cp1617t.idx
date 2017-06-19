@@ -4,9 +4,9 @@
 \indexentry{Programa\IeC {\c c}\IeC {\~a}o liter\IeC {\'a}ria|hyperpage}{2}
 \indexentry{Programa\IeC {\c c}\IeC {\~a}o liter\IeC {\'a}ria|hyperpage}{2}
 \indexentry{C\IeC {\'a}lculo de Programas!Material Pedag\IeC {\'o}gico|hyperpage}{2}
-\indexentry{\LaTeX  !lhs2TeX|hyperpage}{2}
-\indexentry{\LaTeX  |hyperpage}{2}
-\indexentry{\LaTeX  !lhs2TeX|hyperpage}{2}
+\indexentry{\textlatin  {\LaTeX  }!lhs2TeX|hyperpage}{2}
+\indexentry{\textlatin  {\LaTeX  }|hyperpage}{2}
+\indexentry{\textlatin  {\LaTeX  }!lhs2TeX|hyperpage}{2}
 \indexentry{Haskell|hyperpage}{2}
 \indexentry{C\IeC {\'a}lculo de Programas!Material Pedag\IeC {\'o}gico|hyperpage}{2}
 \indexentry{Haskell|hyperpage}{2}
@@ -216,6 +216,8 @@
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {uncurry}|hyperpage}{15}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{15}
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{15}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{15}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{16}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{16}
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{16}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{16}
@@ -237,18 +239,21 @@
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {uncurry}|hyperpage}{16}
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{16}
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{16}
-\indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{16}
-\indexentry{Functor|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{16}
 \indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{16}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {uncurry}|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{16}
-\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{16}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{16}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{17}
+\indexentry{Functor|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {map}|hyperpage}{17}
+\indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!\emph  {uncurry}|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _1$|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{17}
+\indexentry{Fun\IeC {\c c}\IeC {\~a}o!$\pi _2$|hyperpage}{17}
 \indexentry{Combinador ``pointfree''!\emph  {cata}|hyperpage}{17}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{17}
 \indexentry{Combinador ``pointfree''!\emph  {either}|hyperpage}{17}

@@ -1,6 +1,6 @@
 \begin{theindex}
 
-  \item \LaTeX  , \hyperpage{2}
+  \item \textlatin  {\LaTeX  }, \hyperpage{2}
     \subitem lhs2TeX, \hyperpage{2}
 
   \indexspace
@@ -15,23 +15,23 @@
       \subsubitem Exp.hs, \hyperpage{5}
       \subsubitem LTree.hs, \hyperpage{8}
   \item Combinador ``pointfree''
-    \subitem \emph  {cata}, \hyperpage{7}, \hyperpage{16}
-    \subitem \emph  {either}, \hyperpage{7}, \hyperpage{12--16}
+    \subitem \emph  {cata}, \hyperpage{7}, \hyperpage{17}
+    \subitem \emph  {either}, \hyperpage{7}, \hyperpage{12--17}
 
   \indexspace
 
   \item Fun\IeC {\c c}\IeC {\~a}o
-    \subitem $\pi _1$, \hyperpage{12--16}
-    \subitem $\pi _2$, \hyperpage{11}, \hyperpage{13--16}
+    \subitem $\pi _1$, \hyperpage{12--17}
+    \subitem $\pi _2$, \hyperpage{11}, \hyperpage{13--17}
     \subitem \emph  {length}, \hyperpage{7}, \hyperpage{11}, 
 		\hyperpage{16, 17}
-    \subitem \emph  {map}, \hyperpage{11}, \hyperpage{15, 16}
+    \subitem \emph  {map}, \hyperpage{11}, \hyperpage{15--17}
     \subitem \emph  {succ}, \hyperpage{7}, \hyperpage{12--15}, 
 		\hyperpage{17}
     \subitem \emph  {uncurry}, \hyperpage{7}, \hyperpage{13}, 
-		\hyperpage{15, 16}
+		\hyperpage{15--17}
   \item Functor, \hyperpage{3}, \hyperpage{5}, \hyperpage{7--11}, 
-		\hyperpage{16}
+		\hyperpage{17}
 
   \indexspace
 
