@@ -85,7 +85,7 @@
 
 \begin{center}\large
 \begin{tabular}{ll}
-\textbf{Grupo} nr. & 99 (preencher)
+\textbf{Grupo} nr. 28
 \\
 \hline
 a78582 & Hugo Brandão
@@ -886,7 +886,7 @@ worker = cataList (either (split (const True) (const 0)) (split (sep.p1) (cond (
 \just={Aplicar o [nil,cons] e Lei 73}
 %
         |lookahead_sep nil    = True|
-        |lookahead_sep cons (c,l) = sep (c,l)|
+        |lookahead_sep cons (c,l) = sep.p1 (c,l)|
 %
 \just={ Definição de in }
 %
@@ -1032,7 +1032,42 @@ baseB_tree g f = id -|- (f  >< (map (g >< f)))
 
 cataB_tree g =  g . (recB_tree (cataB_tree g)) . outB_tree
 
+\end{code}
+
+\xymatrix@@C=3cm{
+    |B_Tree A|
+           \ar[d]_-{|cataB_tree g|}
+&
+    |1 + (B_Tree A >< (A >< B_treeA)*)|
+           \ar[d]^{|id + (cataB_tree g >< map (id >< cataB_tree g))|}
+           \ar[l]_-{|inB_tree|}
+\\
+     |A*|
+&
+     |1 + A* >< (A >< A* )*|
+           \ar[l]^-{|f|}
+}
+
+
+\begin{code}
 anaB_tree g = inB_tree . (recB_tree (anaB_tree g)) . g
+\end{code}
+
+\xymatrix@@C=3cm{
+    |B_Tree A|
+             \ar[r]^-{|outB_tree|}
+&
+    |1 + (B_Tree A >< (A >< B_treeA)*)|
+\\
+     |A*|
+            \ar[u]^-{|anaB_tree g|}
+            \ar[r]_-{|f|}
+&
+     |1 + A* >< (A >< A* )*|
+            \ar[u]_{|id + (anaB_tree g >< map (id >< anaB_tree g))|}
+}
+
+\begin{code}
 
 hyloB_tree f g = cataB_tree f . anaB_tree g
 
@@ -1050,6 +1085,10 @@ inordB_tree = cataB_tree inord
     where inord = (either nil (conc . (id >< aux)))
           aux = cataList (either nil (conc . ((singl . p1) >< id)))
 \end{code}
+
+\par A inorder vai percorrer bloco a bloco da Btree desde o fim desta e 
+em cada passagem vai colocar tudo por ordem. Quando chegar ao início da Btree
+o resto dela já está ordenada, só falta ordenar esse e bloco e colocá-lo no sítio certo.
 
 \xymatrix@@C=3cm{
     |B_Tree A|
@@ -1097,6 +1136,21 @@ mirrorB_tree = anaB_tree ((id -|- (join . inside . auxb2)) . outB_tree)
           join = split (head . p2) ((uncurry zip) . (split (p1) (tail . p2)))
 \end{code}
 
+\xymatrix@@C=3cm{
+    |B_Tree A|
+             \ar[r]^-{|outB_tree|}
+&
+    |1 + (B_Tree A >< (A >< B_treeA)*)|
+\\
+     |A*|
+            \ar[u]^-{|g = anaB_tree (id + (join . inside . auxb2)) . outB_tree|}
+            \ar[r]_-{|f|}
+&
+     |1 + A* >< (A >< A* )*|
+            \ar[u]_{|id + (anaB_tree g>< map (id >< anaB_tree g))|}
+}
+
+
 \begin{code}
 lsplitB_tree [] = Left ()
 lsplitB_tree (h:t) = Right (s, [(h, l)]) where (s,l) = partB_tree (<h) t
@@ -1109,7 +1163,34 @@ partB_tree p (h:t) | p h       = let (s,l) = partB_tree p t in (h:s,l)
 qSortB_tree :: Ord a => [a] -> [a]
 qSortB_tree = hyloB_tree (either nil inord) lsplitB_tree
                 where inord = conc . (id >< (concat . (map cons)))
+\end{code}
 
+\xymatrix@@C=3cm{
+    |A*|
+           \ar[d]_-{|ana lsplitB_tree|}
+            \ar[r]^-{|lsplitB_tree|}
+&
+    |1 + A* >< (A >< A)|
+           \ar[d]^{|id +((ana lsplitB_tree) >< map(id >< ana lsplitB_tree))|}
+\\
+     |B|
+        \ar[d]_-{|cata inordB_tree|}
+        \ar[r]^-{|outB_tree|}
+&
+     |1 + B >< (A >< B)|
+           \ar[l]^-{|inB_tree|}
+            \ar[d]^{|id +((cata inordB_tree) >< map(id >< cata inordB_tree))|}
+\\
+    |A|
+&
+    |1 + A >< (A >< A)|
+        \ar[l]^-{|inordB_tree|}
+}
+
+\par Basicamente o qSortB_tree vai transformar uma lista numa B_Tree, ordena-la
+e transformar
+
+\begin{code}
 dotB_tree :: (Show a) => B_tree a -> IO ExitCode
 dotB_tree = dotpict . bmap nothing (Just . init . concat . (map (++"|")) . (map show)) . cB_tree2Exp
 

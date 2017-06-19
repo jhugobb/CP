@@ -296,7 +296,7 @@
 
 \begin{center}\large
 \begin{tabular}{ll}
-\textbf{Grupo} nr. & 99 (preencher)
+\textbf{Grupo} nr. 28
 \\
 \hline
 a78582 & Hugo Brandão
@@ -1486,7 +1486,6 @@ Nota: Teste \emph{QuickCheck}:
 
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
-\column{10}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{17}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{29}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
@@ -1507,9 +1506,48 @@ Nota: Teste \emph{QuickCheck}:
 \\[\blanklineskip]%
 \>[B]{}\Varid{cataB\char95 tree}\;\Varid{g}\mathrel{=}{}\<[17]%
 \>[17]{}\Varid{g}\comp (\Varid{recB\char95 tree}\;(\Varid{cataB\char95 tree}\;\Varid{g}))\comp \Varid{outB\char95 tree}{}\<[E]%
-\\[\blanklineskip]%
+\ColumnHook
+\end{hscode}\resethooks
+
+\xymatrix@C=3cm{
+    \ensuremath{\Conid{B\char95 Tree}\;\Conid{A}}
+           \ar[d]_-{\ensuremath{\Varid{cataB\char95 tree}\;\Varid{g}}}
+&
+    \ensuremath{\mathrm{1}\mathbin{+}(\Conid{B\char95 Tree}\;\Conid{A}\times(\Conid{A}\times\Conid{B\char95 treeA})\mathbin{*})}
+           \ar[d]^{\ensuremath{\Varid{id}\mathbin{+}(\Varid{cataB\char95 tree}\;\Varid{g}\times\map \;(\Varid{id}\times\Varid{cataB\char95 tree}\;\Varid{g}))}}
+           \ar[l]_-{\ensuremath{\Varid{inB\char95 tree}}}
+\\
+     \ensuremath{\Conid{A}\mathbin{*}}
+&
+     \ensuremath{\mathrm{1}\mathbin{+}\Conid{A}\mathbin{*}\times(\Conid{A}\times\Conid{A}\mathbin{*})\mathbin{*}}
+           \ar[l]^-{\ensuremath{\Varid{f}}}
+}
+
+\begin{hscode}\SaveRestoreHook
+\column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{anaB\char95 tree}\;\Varid{g}\mathrel{=}\Varid{inB\char95 tree}\comp (\Varid{recB\char95 tree}\;(\Varid{anaB\char95 tree}\;\Varid{g}))\comp \Varid{g}{}\<[E]%
-\\[\blanklineskip]%
+\ColumnHook
+\end{hscode}\resethooks
+
+\xymatrix@C=3cm{
+    \ensuremath{\Conid{B\char95 Tree}\;\Conid{A}}
+             \ar[r]^-{\ensuremath{\Varid{outB\char95 tree}}}
+&
+    \ensuremath{\mathrm{1}\mathbin{+}(\Conid{B\char95 Tree}\;\Conid{A}\times(\Conid{A}\times\Conid{B\char95 treeA})\mathbin{*})}
+\\
+     \ensuremath{\Conid{A}\mathbin{*}}
+            \ar[u]^-{\ensuremath{\Varid{anaB\char95 tree}\;\Varid{g}}}
+            \ar[r]_-{\ensuremath{\Varid{f}}}
+&
+     \ensuremath{\mathrm{1}\mathbin{+}\Conid{A}\mathbin{*}\times(\Conid{A}\times\Conid{A}\mathbin{*})\mathbin{*}}
+            \ar[u]_{\ensuremath{\Varid{id}\mathbin{+}(\Varid{anaB\char95 tree}\;\Varid{g}\times\map \;(\Varid{id}\times\Varid{anaB\char95 tree}\;\Varid{g}))}}
+}
+
+\begin{hscode}\SaveRestoreHook
+\column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{10}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{hyloB\char95 tree}\;\Varid{f}\;\Varid{g}\mathrel{=}\Varid{cataB\char95 tree}\;\Varid{f}\comp \Varid{anaB\char95 tree}\;\Varid{g}{}\<[E]%
 \\[\blanklineskip]%
 \>[B]{}\mathbf{instance}\;\Conid{Functor}\;\mathsf{B}\mbox{-}\mathsf{tree} {}\<[E]%
@@ -1607,6 +1645,20 @@ Nota: Teste \emph{QuickCheck}:
 \ColumnHook
 \end{hscode}\resethooks
 
+\xymatrix@C=3cm{
+    \ensuremath{\Conid{B\char95 Tree}\;\Conid{A}}
+             \ar[r]^-{\ensuremath{\Varid{outB\char95 tree}}}
+&
+    \ensuremath{\mathrm{1}\mathbin{+}(\Conid{B\char95 Tree}\;\Conid{A}\times(\Conid{A}\times\Conid{B\char95 treeA})\mathbin{*})}
+\\
+     \ensuremath{\Conid{A}\mathbin{*}}
+            \ar[u]^-{\ensuremath{\Varid{g}\mathrel{=}\Varid{anaB\char95 tree}\;(\Varid{id}\mathbin{+}(\Varid{join}\comp \Varid{inside}\comp \Varid{auxb2}))\comp \Varid{outB\char95 tree}}}
+            \ar[r]_-{\ensuremath{\Varid{f}}}
+&
+     \ensuremath{\mathrm{1}\mathbin{+}\Conid{A}\mathbin{*}\times(\Conid{A}\times\Conid{A}\mathbin{*})\mathbin{*}}
+            \ar[u]_{\ensuremath{\Varid{id}\mathbin{+}(\Varid{anaB\char95 tree}\;\Varid{g}\times\map \;(\Varid{id}\times\Varid{anaB\char95 tree}\;\Varid{g}))}}
+}
+
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{17}{@{}>{\hspre}l<{\hspost}@{}}%
@@ -1634,7 +1686,35 @@ Nota: Teste \emph{QuickCheck}:
 \\
 \>[B]{}\hsindent{17}{}\<[17]%
 \>[17]{}\mathbf{where}\;\Varid{inord}\mathrel{=}\mathsf{conc}\comp (\Varid{id}\times(\Varid{concat}\comp (\map \;\Varid{cons}))){}\<[E]%
-\\[\blanklineskip]%
+\ColumnHook
+\end{hscode}\resethooks
+
+\xymatrix@C=3cm{
+    \ensuremath{\Conid{A}\mathbin{*}}
+           \ar[d]_-{\ensuremath{\Varid{ana}\;\Varid{lsplitB\char95 tree}}}
+            \ar[r]^-{\ensuremath{\Varid{lsplitB\char95 tree}}}
+&
+    \ensuremath{\mathrm{1}\mathbin{+}\Conid{A}\mathbin{*}\times(\Conid{A}\times\Conid{A})}
+           \ar[d]^{\ensuremath{\Varid{id}\mathbin{+}((\Varid{ana}\;\Varid{lsplitB\char95 tree})\times\map \;(\Varid{id}\times\Varid{ana}\;\Varid{lsplitB\char95 tree}))}}
+\\
+     \ensuremath{\mathit B}
+        \ar[d]_-{\ensuremath{\Varid{cata}\;\Varid{inordB\char95 tree}}}
+        \ar[r]^-{\ensuremath{\Varid{outB\char95 tree}}}
+&
+     \ensuremath{\mathrm{1}\mathbin{+}\mathit B\times(\Conid{A}\times\mathit B)}
+           \ar[l]^-{\ensuremath{\Varid{inB\char95 tree}}}
+            \ar[d]^{\ensuremath{\Varid{id}\mathbin{+}((\Varid{cata}\;\Varid{inordB\char95 tree})\times\map \;(\Varid{id}\times\Varid{cata}\;\Varid{inordB\char95 tree}))}}
+\\
+    \ensuremath{\Conid{A}}
+&
+    \ensuremath{\mathrm{1}\mathbin{+}\Conid{A}\times(\Conid{A}\times\Conid{A})}
+        \ar[l]^-{\ensuremath{\Varid{inordB\char95 tree}}}
+}
+
+\begin{hscode}\SaveRestoreHook
+\column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{17}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{dotB\char95 tree}\mathbin{::}(\Conid{Show}\;\Varid{a})\Rightarrow \mathsf{B}\mbox{-}\mathsf{tree} \;\Varid{a}\to \fun{IO}\;\Conid{ExitCode}{}\<[E]%
 \\
 \>[B]{}\Varid{dotB\char95 tree}\mathrel{=}\Varid{dotpict}\comp \Varid{bmap}\;\Varid{nothing}\;(\Conid{Just}\comp \Varid{init}\comp \Varid{concat}\comp (\map \;(\plus \text{\tt \char34 |\char34}))\comp (\map \;\Varid{show}))\comp \Varid{cB\char95 tree2Exp}{}\<[E]%
